@@ -8,6 +8,7 @@ default runtime_eval/) and never to the governance runtime/.
 from __future__ import annotations
 
 import csv
+import hashlib
 import html
 import json
 import os
@@ -1468,7 +1469,14 @@ def batch_tab(last_run: gr.State):
 
 # ------------------------------------------------------------------ review queue tab
 RQ_HEADERS = ["Method", "Case", "Lang.", "Severity", "Check", "Finding", "Status"]
-RQ_WIDTHS = ["16%", "8%", "6%", "8%", "15%", "35%", "12%"]
+RQ_WIDTHS = ["12%", "9%", "6%", "8%", "15%", "38%", "12%"]
+RQ_SETS = ["Stratified sample", "All items"]
+RQ_SAMPLE_PER_GROUP = 3          # items per method x language x check family
+RQ_SAMPLE_SEED = "review-sample-v1"  # fixed seed: the same items are drawn every time
+_CHECK_GROUPS = {"symptom": "Symptom", "numeric": "Number or measurement", "diagnosis": "Diagnosis",
+                 "followup": "Follow-up", "investigation": "Investigation", "medication": "Medication",
+                 "procedure": "Procedure", "progress": "Progress", "certainty": "Certainty",
+                 "qa_limitation": "Documented limitation", "pii_pattern": "Identifier pattern"}
 RQ_FAMILIES = ["Structured facts", "Identifiers", "Faithfulness (NLI, AlignScore)", "Readability and length",
                "Plain style"]
 RQ_SEVERITY_ORDER = {"critical": 0, "fail": 1, "major": 2, "minor": 3, "review": 4, "info": 5}
@@ -1534,6 +1542,52 @@ def _rq_items(dataset_id, include_tests=False) -> tuple[list[dict[str, Any]], di
     return out, run_map
 
 
+def _check_label(check: str, family: str) -> str:
+    """A readable name for a check id such as engine::medication_frequency_changed or pii::encounter_date."""
+    if check == "flag":
+        return f"Automated flag ({family.split(' (')[0].lower()})"
+    group, _, name = check.partition("::")
+    words = name.replace("_", " ").strip()
+    if group == "engine":
+        return words[:1].upper() + words[1:]
+    if group == "pii":
+        return f"Identifier: {words}"
+    return _CHECK_GROUPS.get(group, group.replace("_", " ").capitalize() or check)
+
+
+def _short_method(name: str) -> str:
+    """A compact method name for the queue table (the full name stays in the filter and the panel)."""
+    m = re.match(r"Qwen[\d.]*-([\d.]+B)", name)
+    if m:
+        return f"Qwen {m.group(1)}"
+    if name.startswith("Phi-3.5"):
+        return "Phi-3.5 mini"
+    if name.lower().startswith("salamandra"):
+        return "Salamandra 7B"
+    if name == BASELINE_LABEL:
+        return "Reference (baseline)"
+    if name.startswith("Rule baseline"):
+        return "Rule baseline"
+    return re.sub(r"\s*\(.*\)$", "", name)
+
+
+def _rq_sample(items):
+    """Stratified sample: up to RQ_SAMPLE_PER_GROUP items per method, language and check family, drawn in a fixed
+    pseudo-random order (SHA-256 of seed + item id), so the sample is reproducible and does not change with decisions."""
+    key = lambda i: hashlib.sha256(f"{RQ_SAMPLE_SEED}:{i['item_id']}".encode()).hexdigest()
+    groups: dict[tuple, list] = {}
+    for i in sorted(items, key=key):
+        g = groups.setdefault((i["method"], i["language"], i["family"]), [])
+        if len(g) < RQ_SAMPLE_PER_GROUP:
+            g.append(i["item_id"])
+    keep = {x for g in groups.values() for x in g}
+    return [i for i in items if i["item_id"] in keep]
+
+
+def _rq_set(items, review_set):
+    return _rq_sample(items) if review_set == RQ_SETS[0] else items
+
+
 def _rq_filter(items, method, lang, sev, family, status):
     return [i for i in items if (method in (None, "All") or i["method"] == method)
             and (lang in (None, "All") or i["language"] == lang.lower())
@@ -1554,7 +1608,8 @@ def _rq_table(sel, page, selected_id):
     body = ""
     for i in chunk:
         status = i["decision"] or "Pending"
-        cells = [i["method"], i["patient_id"], i["language"].upper(), i["severity"], i["check"], i["finding"], status]
+        cells = [_short_method(i["method"]), i["patient_id"], i["language"].upper(), i["severity"],
+                 _check_label(i["check"], i["family"]), i["finding"], status]
         js = ("const t=document.querySelector('#rq-pick textarea');t.value='" + i["item_id"] +
               "';t.dispatchEvent(new Event('input',{bubbles:true}));")
         cls = ' class="rq-sel"' if i["item_id"] == selected_id else ""
@@ -1584,7 +1639,8 @@ def _rq_panel(item, run) -> str:
         return "<div class='rq-panel ev-empty'>Click a row in the table to review it.</div>"
     rows = [("Finding", item["finding"]), ("Method · case · language",
             f"{item['method']} · {item['patient_id']} · {item['language'].upper()}"),
-            ("Severity · check", f"{item['severity']} · {item['check']} ({item['family']})")]
+            ("Severity · check", f"{item['severity']} · {_check_label(item['check'], item['family'])} ({item['family']})"
+             + ("" if item["check"] == "flag" else f" · id {item['check']}"))]
     f = item.get("finding_obj")
     if f:
         rows += [("Structured record", f"{f.get('json_pointer') or '—'}: {f.get('source_evidence') or '—'}"),
@@ -1658,6 +1714,9 @@ def review_queue_tab(last_run: gr.State):
                     "clinical reference, its sign-off or its freeze. The reviewer name is recorded as typed.")
         with gr.Row():
             release = _release_dropdown("Evaluation dataset release", scale=3)
+            review_set = gr.Dropdown(RQ_SETS, value=RQ_SETS[0], label="Review set", scale=2,
+                                     info=f"Sample: up to {RQ_SAMPLE_PER_GROUP} items per method, language and check "
+                                          "family, drawn with a fixed seed")
             include_tests = gr.Checkbox(value=False, label="Include single test runs and incomplete batches", scale=2)
         with gr.Row():
             f_method = gr.Dropdown(["All"], value="All", label="Method", scale=3)
@@ -1665,7 +1724,7 @@ def review_queue_tab(last_run: gr.State):
             f_sev = gr.Dropdown(["All"], value="All", label="Severity", scale=1, min_width=120)
             f_family = gr.Dropdown(["All"] + RQ_FAMILIES, value="All", label="Check family", scale=2)
             f_status = gr.Dropdown(["Pending", "Reviewed", "All"], value="Pending", label="Status", scale=1,
-                                   min_width=120)
+                                   min_width=160)
         with gr.Row(elem_classes=["ev-pager"]):
             prev_b = gr.Button("◀ Previous", size="sm", scale=0, min_width=110)
             where = gr.Markdown("", elem_classes=["ev-page"])
@@ -1683,7 +1742,9 @@ def review_queue_tab(last_run: gr.State):
             open_btn = gr.Button("Open this run in Evaluation and Metrics")
         msg = gr.Markdown()
         gr.Markdown("### Review results", elem_classes=["ev-section"])
-        gr.Markdown("From the decisions recorded so far, for the release and runs selected above (all statuses).",
+        gr.Markdown("From the decisions recorded so far, for the release, runs and review set selected above "
+                    "(all statuses). With the stratified sample, the false-positive share is an estimate from the "
+                    "sample.",
                     elem_classes=["ev-read-note"])
         fam_tbl = gr.HTML()
         meth_tbl = gr.HTML()
@@ -1691,10 +1752,11 @@ def review_queue_tab(last_run: gr.State):
         pos = gr.State(0)
         sel_id = gr.State(None)
 
-        filters = [release, include_tests, f_method, f_lang, f_sev, f_family, f_status]
+        filters = [release, include_tests, review_set, f_method, f_lang, f_sev, f_family, f_status]
 
-        def render(ds, inc, m, l, s, fam, st, page, chosen, keep_choices=True):
+        def render(ds, inc, rs, m, l, s, fam, st, page, chosen, keep_choices=True):
             items, run_map = _rq_items(ds, inc)
+            items = _rq_set(items, rs)
             sel = _rq_filter(items, m, l, s, fam, st)
             ids = [i["item_id"] for i in sel]
             if page is None:
@@ -1726,21 +1788,21 @@ def review_queue_tab(last_run: gr.State):
         next_b.click(lambda *a: render(*a[:-2], a[-2] + 1, None), filters + [pos, sel_id], outs)
         pick.input(lambda *a: render(*a[:-2], a[-2], a[-1]), filters + [pos, pick], outs)
 
-        def save_next(ds, inc, m, l, s, fam, st, page, item_id, dec, who, txt):
+        def save_next(ds, inc, rs, m, l, s, fam, st, page, item_id, dec, who, txt):
             if not item_id:
                 raise gr.Error("Click a row in the table first.")
             if not dec:
                 raise gr.Error("Choose a decision.")
-            before = [i["item_id"] for i in _rq_filter(_rq_items(ds, inc)[0], m, l, s, fam, st)]
+            before = [i["item_id"] for i in _rq_filter(_rq_set(_rq_items(ds, inc)[0], rs), m, l, s, fam, st)]
             try:
                 rec = queue().decide(item_id, dec, who, txt)
             except (KeyError, ValueError) as e:
                 raise gr.Error(str(e))
-            ids = [i["item_id"] for i in _rq_filter(_rq_items(ds, inc)[0], m, l, s, fam, st)]
+            ids = [i["item_id"] for i in _rq_filter(_rq_set(_rq_items(ds, inc)[0], rs), m, l, s, fam, st)]
             # next item: the one after the saved item in the list as it was (the saved one may have left the list)
             after = before[before.index(item_id) + 1:] if item_id in before else []
             nxt = next((x for x in after if x in ids), ids[0] if ids else None)
-            out = render(ds, inc, m, l, s, fam, st, None, nxt)
+            out = render(ds, inc, rs, m, l, s, fam, st, None, nxt)
             return (*out, f"Saved **{rec['decision']}** by {html.escape(rec['reviewer'])}.")
 
         save.click(save_next, filters + [pos, sel_id, decision, reviewer, note], outs + [msg])
