@@ -1,0 +1,1474 @@
+{
+  "HC001": {
+    "id": "HC001",
+    "full_name": "Lucía Ferrer Montalvo",
+    "fictional_identification_number": "SYN-ID-001",
+    "date_of_birth": "15/04/1996",
+    "age": 30,
+    "encounter_date": "20/10/2026",
+    "phone_number": "SYN-PHONE-001",
+    "email": "patient001@example.invalid",
+    "address": "Fictional Street 1, Example City",
+    "sex": "Female",
+    "reason_for_consultation": "Sore throat, painful swallowing and fever for 3 days.",
+    "medical_history": [],
+    "family_history": [],
+    "current_medications": [],
+    "allergies": [
+      "No known drug allergies"
+    ],
+    "symptoms": [
+      "Sore throat",
+      "Painful swallowing (odynophagia)",
+      "Fever up to 38.9 °C measured at home",
+      "No cough",
+      "No nasal congestion",
+      "No ear pain"
+    ],
+    "symptom_onset": "3 days before the encounter",
+    "symptom_duration": "3 days",
+    "symptom_frequency": "Continuous",
+    "symptom_severity": "Moderate",
+    "vital_signs": {
+      "blood_pressure_mmHg": "118/76",
+      "heart_rate_bpm": 96,
+      "respiratory_rate_bpm": 16,
+      "temperature_celsius": 38.6,
+      "oxygen_saturation_percent": 98,
+      "weight_kg": null,
+      "height_m": null,
+      "bmi_kg_m2": null
+    },
+    "physical_examination": [
+      "Enlarged, erythematous palatine tonsils with white exudate bilaterally",
+      "Tender anterior cervical lymphadenopathy bilaterally",
+      "No peritonsillar bulging and no uvular deviation",
+      "Normal tympanic membranes bilaterally",
+      "Chest clear on auscultation"
+    ],
+    "laboratory_results": [
+      {
+        "test": "Rapid group A streptococcal antigen test (throat swab)",
+        "result": "Positive",
+        "unit": null,
+        "reference_range": "Negative",
+        "interpretation": "Abnormal"
+      }
+    ],
+    "imaging_results": [],
+    "other_investigations": [
+      "Modified Centor score: 4 (tonsillar exudate, tender anterior cervical nodes, fever, absence of cough; age 15–44 years adds 0 points)"
+    ],
+    "primary_diagnosis": "Acute streptococcal tonsillopharyngitis (group A Streptococcus)",
+    "diagnostic_status": "confirmed",
+    "secondary_diagnoses": [],
+    "clinical_assessment": "Acute tonsillopharyngitis with a modified Centor score of 4 and a positive rapid streptococcal antigen test, confirming group A streptococcal infection. No signs of peritonsillar abscess or airway compromise. Suitable for outpatient oral antibiotic treatment.",
+    "treatment_provided": [
+      "Oral antibiotic therapy started",
+      "Analgesic and antipyretic therapy"
+    ],
+    "prescribed_medications": [
+      {
+        "name": "Amoxicillin",
+        "dose": "500 mg",
+        "route": "Oral",
+        "frequency": "Every 8 hours",
+        "duration": "10 days",
+        "indication": "Group A streptococcal tonsillopharyngitis"
+      },
+      {
+        "name": "Paracetamol",
+        "dose": "1 g",
+        "route": "Oral",
+        "frequency": "Every 8 hours as needed (maximum 3 g per day)",
+        "duration": null,
+        "indication": "Throat pain or fever"
+      }
+    ],
+    "procedures": [
+      "Throat swab for rapid streptococcal antigen test"
+    ],
+    "treatment_recommendations": [
+      "Complete the full 10-day antibiotic course even if symptoms improve",
+      "Maintain adequate oral fluid intake and rest",
+      "Avoid sharing cups and utensils",
+      "May return to work 24 hours after starting antibiotics if fever has resolved"
+    ],
+    "clinical_progress": "Initial consultation; treatment was started at this visit and progress has not yet been assessed.",
+    "response_to_treatment": null,
+    "warning_signs": [
+      "Difficulty breathing or noisy breathing",
+      "Inability to swallow saliva or drooling",
+      "Difficulty opening the mouth or one-sided throat swelling",
+      "Fever persisting more than 72 hours after starting antibiotics",
+      "Skin rash after starting amoxicillin"
+    ],
+    "follow_up_plan": "Return for reassessment if there is no improvement within 72 hours or if any warning sign appears; no routine follow-up visit is required if symptoms resolve.",
+    "follow_up_interval": "72 hours if no improvement",
+    "glossary_terms": [
+      {
+        "term": "Tonsillopharyngitis",
+        "definition_en": "Inflammation of the tonsils and the back of the throat, usually caused by a viral or bacterial infection.",
+        "definition_es": "Inflamación de las amígdalas y de la parte posterior de la garganta, generalmente causada por una infección vírica o bacteriana."
+      },
+      {
+        "term": "Exudate",
+        "definition_en": "Fluid, often whitish, that leaks from inflamed tissue and can be seen as patches on the tonsils.",
+        "definition_es": "Líquido, a menudo blanquecino, que sale de un tejido inflamado y puede verse como placas en las amígdalas."
+      },
+      {
+        "term": "Centor score",
+        "definition_en": "A clinical scale that estimates the likelihood that a sore throat is caused by streptococcal bacteria.",
+        "definition_es": "Escala clínica que estima la probabilidad de que un dolor de garganta esté causado por bacterias estreptocócicas."
+      }
+    ]
+  },
+  "HC002": {
+    "id": "HC002",
+    "full_name": "Antonio Vidal Serrano",
+    "fictional_identification_number": "SYN-ID-002",
+    "date_of_birth": "03/11/1967",
+    "age": 58,
+    "encounter_date": "21/10/2026",
+    "phone_number": "SYN-PHONE-002",
+    "email": "patient002@example.invalid",
+    "address": "Fictional Street 2, Example City",
+    "sex": "Male",
+    "reason_for_consultation": "Review of persistently elevated home blood pressure readings after 3 months of lifestyle measures.",
+    "medical_history": [
+      "Elevated office blood pressure first recorded 3 months before this encounter",
+      "Former smoker; stopped smoking 10 years ago"
+    ],
+    "family_history": [
+      "Father with hypertension who had a stroke at age 70"
+    ],
+    "current_medications": [],
+    "allergies": [
+      "No known drug allergies"
+    ],
+    "symptoms": [
+      "Asymptomatic",
+      "Denies headache, chest pain, shortness of breath, palpitations and visual disturbances"
+    ],
+    "symptom_onset": null,
+    "symptom_duration": null,
+    "symptom_frequency": null,
+    "symptom_severity": null,
+    "vital_signs": {
+      "blood_pressure_mmHg": "154/96",
+      "heart_rate_bpm": 74,
+      "respiratory_rate_bpm": 14,
+      "temperature_celsius": null,
+      "oxygen_saturation_percent": null,
+      "weight_kg": 86,
+      "height_m": 1.74,
+      "bmi_kg_m2": 28.4
+    },
+    "physical_examination": [
+      "Office blood pressure 154/96 mmHg (mean of two seated readings)",
+      "Regular heart sounds without murmurs",
+      "No peripheral oedema",
+      "Peripheral pulses present and symmetrical"
+    ],
+    "laboratory_results": [
+      {
+        "test": "Serum creatinine",
+        "result": 0.9,
+        "unit": "mg/dL",
+        "reference_range": "0.7–1.3",
+        "interpretation": "Normal"
+      },
+      {
+        "test": "Estimated glomerular filtration rate",
+        "result": 92,
+        "unit": "mL/min/1.73 m²",
+        "reference_range": ">90",
+        "interpretation": "Normal"
+      },
+      {
+        "test": "Serum potassium",
+        "result": 4.3,
+        "unit": "mmol/L",
+        "reference_range": "3.5–5.0",
+        "interpretation": "Normal"
+      },
+      {
+        "test": "Fasting glucose",
+        "result": 94,
+        "unit": "mg/dL",
+        "reference_range": "70–99",
+        "interpretation": "Normal"
+      },
+      {
+        "test": "LDL cholesterol",
+        "result": 112,
+        "unit": "mg/dL",
+        "reference_range": "<116",
+        "interpretation": "Normal"
+      },
+      {
+        "test": "Urine albumin-to-creatinine ratio",
+        "result": 12,
+        "unit": "mg/g",
+        "reference_range": "<30",
+        "interpretation": "Normal"
+      }
+    ],
+    "imaging_results": [],
+    "other_investigations": [
+      "Home blood pressure monitoring over 7 days: mean 152/94 mmHg",
+      "12-lead ECG: sinus rhythm at 72 bpm, no signs of left ventricular hypertrophy"
+    ],
+    "primary_diagnosis": "Essential (primary) hypertension, stage 2",
+    "diagnostic_status": "confirmed",
+    "secondary_diagnoses": [
+      {
+        "diagnosis": "Overweight (BMI 28.4 kg/m²)",
+        "status": "confirmed"
+      }
+    ],
+    "clinical_assessment": "Hypertension confirmed by repeated office readings and home monitoring, without evidence of target organ damage (normal renal function, no albuminuria, no left ventricular hypertrophy on ECG). Blood pressure remains above target despite 3 months of lifestyle measures, so drug treatment is indicated.",
+    "treatment_provided": [
+      "Antihypertensive drug therapy started",
+      "Lifestyle counselling reinforced"
+    ],
+    "prescribed_medications": [
+      {
+        "name": "Ramipril",
+        "dose": "2.5 mg",
+        "route": "Oral",
+        "frequency": "Once daily",
+        "duration": "Long-term",
+        "indication": "Essential hypertension"
+      }
+    ],
+    "procedures": [],
+    "treatment_recommendations": [
+      "Limit salt intake to less than 5 g per day",
+      "Aerobic physical activity for at least 150 minutes per week",
+      "Gradual weight reduction",
+      "Limit alcohol intake",
+      "Continue home blood pressure log twice daily for 7 days before the next visit"
+    ],
+    "clinical_progress": "Home and office blood pressure readings did not reach target after 3 months of lifestyle measures.",
+    "response_to_treatment": "Insufficient response to lifestyle modification; response to ramipril not yet assessed.",
+    "warning_signs": [
+      "Severe headache with blood pressure of 180/110 mmHg or higher",
+      "Chest pain or shortness of breath",
+      "Sudden weakness, numbness, speech difficulty or vision loss",
+      "Swelling of the lips, tongue or face after starting ramipril"
+    ],
+    "follow_up_plan": "Review in 4 weeks with home blood pressure log and repeat serum creatinine and potassium to check tolerance of ramipril; titrate dose if blood pressure remains above target.",
+    "follow_up_interval": "4 weeks",
+    "glossary_terms": [
+      {
+        "term": "Essential hypertension",
+        "definition_en": "High blood pressure without an identifiable specific cause; it is the most common form of hypertension.",
+        "definition_es": "Presión arterial elevada sin una causa específica identificable; es la forma más frecuente de hipertensión."
+      },
+      {
+        "term": "ACE inhibitor",
+        "definition_en": "A class of medicines that lower blood pressure by blocking the formation of a hormone that narrows blood vessels.",
+        "definition_es": "Grupo de medicamentos que reducen la presión arterial bloqueando la formación de una hormona que estrecha los vasos sanguíneos."
+      },
+      {
+        "term": "Target organ damage",
+        "definition_en": "Harm caused by long-standing high blood pressure to organs such as the heart, kidneys, brain or eyes.",
+        "definition_es": "Daño causado por la presión arterial elevada mantenida en órganos como el corazón, los riñones, el cerebro o los ojos."
+      }
+    ]
+  },
+  "HC003": {
+    "id": "HC003",
+    "full_name": "Carmen Ortega Ruiz",
+    "fictional_identification_number": "SYN-ID-003",
+    "date_of_birth": "22/07/1971",
+    "age": 55,
+    "encounter_date": "22/10/2026",
+    "phone_number": "SYN-PHONE-003",
+    "email": "patient003@example.invalid",
+    "address": "Fictional Street 3, Example City",
+    "sex": "Female",
+    "reason_for_consultation": "Increased thirst, frequent urination and tiredness; review of blood test results.",
+    "medical_history": [
+      "Gestational diabetes during pregnancy in 1998",
+      "Obesity"
+    ],
+    "family_history": [
+      "Mother with type 2 diabetes mellitus"
+    ],
+    "current_medications": [],
+    "allergies": [
+      "No known drug allergies"
+    ],
+    "symptoms": [
+      "Increased thirst (polydipsia)",
+      "Frequent urination (polyuria), including at night",
+      "Fatigue",
+      "No weight loss",
+      "No blurred vision"
+    ],
+    "symptom_onset": "Approximately 2 months before the encounter",
+    "symptom_duration": "2 months",
+    "symptom_frequency": "Daily",
+    "symptom_severity": "Mild",
+    "vital_signs": {
+      "blood_pressure_mmHg": "128/82",
+      "heart_rate_bpm": 80,
+      "respiratory_rate_bpm": 14,
+      "temperature_celsius": null,
+      "oxygen_saturation_percent": null,
+      "weight_kg": 92,
+      "height_m": 1.62,
+      "bmi_kg_m2": 35.1
+    },
+    "physical_examination": [
+      "Central obesity",
+      "Feet: intact skin without ulcers, normal 10 g monofilament sensation bilaterally",
+      "Dorsalis pedis and posterior tibial pulses present bilaterally",
+      "No acanthosis nigricans"
+    ],
+    "laboratory_results": [
+      {
+        "test": "Glycated haemoglobin (HbA1c)",
+        "result": 7.8,
+        "unit": "%",
+        "reference_range": "<5.7",
+        "interpretation": "Abnormal (diabetic range)"
+      },
+      {
+        "test": "Fasting plasma glucose (first sample)",
+        "result": 156,
+        "unit": "mg/dL",
+        "reference_range": "70–99",
+        "interpretation": "Abnormal (diabetic range)"
+      },
+      {
+        "test": "Fasting plasma glucose (repeat sample)",
+        "result": 149,
+        "unit": "mg/dL",
+        "reference_range": "70–99",
+        "interpretation": "Abnormal (diabetic range)"
+      },
+      {
+        "test": "Estimated glomerular filtration rate",
+        "result": 88,
+        "unit": "mL/min/1.73 m²",
+        "reference_range": ">60",
+        "interpretation": "Normal"
+      },
+      {
+        "test": "Urine albumin-to-creatinine ratio",
+        "result": 18,
+        "unit": "mg/g",
+        "reference_range": "<30",
+        "interpretation": "Normal"
+      },
+      {
+        "test": "LDL cholesterol",
+        "result": 128,
+        "unit": "mg/dL",
+        "reference_range": "<100 in diabetes",
+        "interpretation": "Above target"
+      },
+      {
+        "test": "Urine ketones",
+        "result": "Negative",
+        "unit": null,
+        "reference_range": "Negative",
+        "interpretation": "Normal"
+      }
+    ],
+    "imaging_results": [],
+    "other_investigations": [
+      "Diabetic retinal screening (retinography) requested; result pending"
+    ],
+    "primary_diagnosis": "Type 2 diabetes mellitus, newly diagnosed",
+    "diagnostic_status": "confirmed",
+    "secondary_diagnoses": [
+      {
+        "diagnosis": "Obesity class II (BMI 35.1 kg/m²)",
+        "status": "confirmed"
+      },
+      {
+        "diagnosis": "Dyslipidaemia (LDL above target for diabetes)",
+        "status": "confirmed"
+      }
+    ],
+    "clinical_assessment": "Osmotic symptoms with HbA1c of 7.8% and two fasting glucose values above 126 mg/dL confirm type 2 diabetes. Risk factors include obesity, previous gestational diabetes and a first-degree relative with diabetes. No evidence of nephropathy or peripheral neuropathy; retinal screening pending. Ketones negative.",
+    "treatment_provided": [
+      "Oral glucose-lowering therapy started",
+      "Lipid-lowering therapy started",
+      "Diabetes education and dietary advice"
+    ],
+    "prescribed_medications": [
+      {
+        "name": "Metformin",
+        "dose": "500 mg",
+        "route": "Oral",
+        "frequency": "Once daily with the evening meal for 1 week, then twice daily with meals",
+        "duration": "Long-term",
+        "indication": "Type 2 diabetes mellitus"
+      },
+      {
+        "name": "Atorvastatin",
+        "dose": "20 mg",
+        "route": "Oral",
+        "frequency": "Once daily",
+        "duration": "Long-term",
+        "indication": "Cardiovascular risk reduction in diabetes"
+      }
+    ],
+    "procedures": [],
+    "treatment_recommendations": [
+      "Referral to structured diabetes education programme",
+      "Reduce refined carbohydrates and sugary drinks",
+      "Aerobic physical activity for at least 150 minutes per week",
+      "Target weight loss of 5–10% of body weight",
+      "Daily foot inspection"
+    ],
+    "clinical_progress": "Initial diagnostic consultation; treatment started at this visit and progress has not yet been assessed.",
+    "response_to_treatment": null,
+    "warning_signs": [
+      "Vomiting, abdominal pain or rapid breathing",
+      "Confusion or excessive drowsiness",
+      "Persistent diarrhoea or abdominal discomfort after starting metformin",
+      "Foot wound, redness or swelling"
+    ],
+    "follow_up_plan": "Nurse review in 4 weeks to check metformin tolerance; medical review in 3 months with repeat HbA1c and lipid profile; review retinal screening result when available.",
+    "follow_up_interval": "3 months",
+    "glossary_terms": [
+      {
+        "term": "HbA1c (glycated haemoglobin)",
+        "definition_en": "A blood test that reflects the average blood glucose level over the previous 2–3 months.",
+        "definition_es": "Análisis de sangre que refleja el nivel medio de glucosa en sangre durante los 2–3 meses anteriores."
+      },
+      {
+        "term": "Polyuria",
+        "definition_en": "The production of abnormally large volumes of urine, leading to frequent urination.",
+        "definition_es": "Producción de volúmenes de orina anormalmente grandes, que provoca orinar con frecuencia."
+      },
+      {
+        "term": "Metformin",
+        "definition_en": "A first-line oral medicine for type 2 diabetes that reduces glucose production by the liver.",
+        "definition_es": "Medicamento oral de primera línea para la diabetes tipo 2 que reduce la producción de glucosa por el hígado."
+      }
+    ]
+  },
+  "HC004": {
+    "id": "HC004",
+    "full_name": "Daniel Navarro Gil",
+    "fictional_identification_number": "SYN-ID-004",
+    "date_of_birth": "09/03/2002",
+    "age": 24,
+    "encounter_date": "23/10/2026",
+    "phone_number": "SYN-PHONE-004",
+    "email": "patient004@example.invalid",
+    "address": "Fictional Street 4, Example City",
+    "sex": "Male",
+    "reason_for_consultation": "Persistent nasal congestion and sneezing with episodes of wheezing and night-time cough.",
+    "medical_history": [
+      "Allergic rhinitis symptoms since adolescence",
+      "Episodic wheezing treated with as-needed salbutamol"
+    ],
+    "family_history": [
+      "Mother with asthma"
+    ],
+    "current_medications": [
+      {
+        "name": "Salbutamol",
+        "dose": "100 micrograms per inhalation",
+        "route": "Inhaled",
+        "frequency": "2 inhalations as needed (currently used about 3 times per week)",
+        "duration": null,
+        "indication": "Wheezing"
+      }
+    ],
+    "allergies": [
+      "No known drug allergies"
+    ],
+    "symptoms": [
+      "Sneezing",
+      "Watery nasal discharge",
+      "Nasal congestion",
+      "Itchy eyes",
+      "Wheezing",
+      "Night-time cough twice per week",
+      "Shortness of breath on exertion"
+    ],
+    "symptom_onset": "Gradual worsening over the past 3 months",
+    "symptom_duration": "3 months",
+    "symptom_frequency": "Nasal symptoms daily; wheezing about 3 days per week; night-time awakenings twice per week",
+    "symptom_severity": "Moderate",
+    "vital_signs": {
+      "blood_pressure_mmHg": "120/74",
+      "heart_rate_bpm": 78,
+      "respiratory_rate_bpm": 16,
+      "temperature_celsius": 36.6,
+      "oxygen_saturation_percent": 98,
+      "weight_kg": null,
+      "height_m": null,
+      "bmi_kg_m2": null
+    },
+    "physical_examination": [
+      "Pale, swollen nasal turbinates with clear discharge",
+      "Scattered expiratory wheeze on chest auscultation",
+      "No use of accessory respiratory muscles",
+      "Mild conjunctival redness bilaterally"
+    ],
+    "laboratory_results": [],
+    "imaging_results": [],
+    "other_investigations": [
+      "Spirometry: FEV1/FVC 0.68; FEV1 82% of predicted",
+      "Bronchodilator reversibility: FEV1 increase of 14% (320 mL) after salbutamol",
+      "Fractional exhaled nitric oxide (FeNO): 48 ppb",
+      "Skin prick test: positive for house dust mite (Dermatophagoides pteronyssinus); negative for grass pollen, cat and dog dander"
+    ],
+    "primary_diagnosis": "Persistent allergic rhinitis with allergic asthma (house dust mite sensitisation)",
+    "diagnostic_status": "confirmed",
+    "secondary_diagnoses": [
+      {
+        "diagnosis": "Allergic conjunctivitis",
+        "status": "confirmed"
+      }
+    ],
+    "clinical_assessment": "Reversible airflow obstruction and raised FeNO confirm asthma, which is partly controlled (daytime symptoms more than twice weekly and night-time awakenings). Persistent rhinitis with house dust mite sensitisation. Treatment should be stepped up to inhaled corticosteroid-containing therapy together with treatment of the upper airway.",
+    "treatment_provided": [
+      "Asthma treatment stepped up",
+      "Intranasal corticosteroid and oral antihistamine started",
+      "Inhaler technique training",
+      "Written asthma action plan provided"
+    ],
+    "prescribed_medications": [
+      {
+        "name": "Budesonide/formoterol",
+        "dose": "160/4.5 micrograms per inhalation",
+        "route": "Inhaled",
+        "frequency": "1 inhalation twice daily plus 1 inhalation as needed for symptoms (maximum 12 inhalations per day)",
+        "duration": "Ongoing; review in 6 weeks",
+        "indication": "Asthma (replaces as-needed salbutamol)"
+      },
+      {
+        "name": "Mometasone furoate nasal spray",
+        "dose": "50 micrograms per spray; 2 sprays in each nostril",
+        "route": "Intranasal",
+        "frequency": "Once daily",
+        "duration": "Ongoing; review in 6 weeks",
+        "indication": "Allergic rhinitis"
+      },
+      {
+        "name": "Cetirizine",
+        "dose": "10 mg",
+        "route": "Oral",
+        "frequency": "Once daily",
+        "duration": "Ongoing; review in 6 weeks",
+        "indication": "Allergic rhinitis and conjunctivitis"
+      }
+    ],
+    "procedures": [
+      "Spirometry with bronchodilator reversibility test",
+      "FeNO measurement",
+      "Skin prick testing"
+    ],
+    "treatment_recommendations": [
+      "Stop using salbutamol; use budesonide/formoterol as reliever",
+      "House dust mite reduction measures: mite-impermeable bedding covers and washing bedding at 60 °C weekly",
+      "Follow the written asthma action plan",
+      "Avoid tobacco smoke exposure"
+    ],
+    "clinical_progress": "Initial specialist assessment; new treatment started at this visit and progress has not yet been assessed.",
+    "response_to_treatment": "Inadequate symptom control with as-needed salbutamol alone; response to new treatment not yet assessed.",
+    "warning_signs": [
+      "Breathlessness that prevents speaking in full sentences",
+      "Reliever needed more than every 4 hours or providing little relief",
+      "Bluish lips or drowsiness",
+      "Night-time symptoms becoming more frequent"
+    ],
+    "follow_up_plan": "Review in 6 weeks to assess asthma control, inhaler technique and rhinitis symptoms; consider allergen immunotherapy referral if rhinitis remains uncontrolled.",
+    "follow_up_interval": "6 weeks",
+    "glossary_terms": [
+      {
+        "term": "Spirometry",
+        "definition_en": "A breathing test that measures how much air a person can exhale and how quickly.",
+        "definition_es": "Prueba respiratoria que mide cuánto aire puede expulsar una persona y con qué rapidez."
+      },
+      {
+        "term": "FeNO (fractional exhaled nitric oxide)",
+        "definition_en": "A breath test that measures nitric oxide, a marker of allergic-type inflammation in the airways.",
+        "definition_es": "Prueba de aliento que mide el óxido nítrico, un marcador de inflamación de tipo alérgico en las vías respiratorias."
+      },
+      {
+        "term": "Inhaled corticosteroid",
+        "definition_en": "An anti-inflammatory medicine breathed into the lungs to reduce airway inflammation and prevent asthma attacks.",
+        "definition_es": "Medicamento antiinflamatorio que se inhala hacia los pulmones para reducir la inflamación de las vías respiratorias y prevenir las crisis de asma."
+      }
+    ]
+  },
+  "HC005": {
+    "id": "HC005",
+    "full_name": "Elena Castillo Prieto",
+    "fictional_identification_number": "SYN-ID-005",
+    "date_of_birth": "30/12/1982",
+    "age": 43,
+    "encounter_date": "26/10/2026",
+    "phone_number": "SYN-PHONE-005",
+    "email": "patient005@example.invalid",
+    "address": "Fictional Street 5, Example City",
+    "sex": "Female",
+    "reason_for_consultation": "Burning sensation behind the breastbone and acid regurgitation after meals and at night.",
+    "medical_history": [
+      "Tension-type headache"
+    ],
+    "family_history": [],
+    "current_medications": [
+      {
+        "name": "Ibuprofen",
+        "dose": "400 mg",
+        "route": "Oral",
+        "frequency": "As needed, approximately twice per month",
+        "duration": null,
+        "indication": "Tension-type headache"
+      }
+    ],
+    "allergies": [
+      "No known drug allergies"
+    ],
+    "symptoms": [
+      "Heartburn (retrosternal burning)",
+      "Acid regurgitation",
+      "Symptoms worse after large meals and when lying down",
+      "No difficulty swallowing",
+      "No weight loss",
+      "No vomiting",
+      "No black stools or vomiting of blood"
+    ],
+    "symptom_onset": "Approximately 4 months before the encounter",
+    "symptom_duration": "4 months",
+    "symptom_frequency": "About 4 days per week",
+    "symptom_severity": "Moderate",
+    "vital_signs": {
+      "blood_pressure_mmHg": "122/78",
+      "heart_rate_bpm": 72,
+      "respiratory_rate_bpm": 14,
+      "temperature_celsius": null,
+      "oxygen_saturation_percent": null,
+      "weight_kg": 74,
+      "height_m": 1.65,
+      "bmi_kg_m2": 27.2
+    },
+    "physical_examination": [
+      "Soft, non-tender abdomen without masses",
+      "No epigastric tenderness",
+      "No pallor"
+    ],
+    "laboratory_results": [
+      {
+        "test": "Haemoglobin",
+        "result": 13.6,
+        "unit": "g/dL",
+        "reference_range": "12.0–15.5",
+        "interpretation": "Normal"
+      }
+    ],
+    "imaging_results": [],
+    "other_investigations": [
+      "Upper gastrointestinal endoscopy not indicated at this stage because there are no alarm features"
+    ],
+    "primary_diagnosis": "Gastroesophageal reflux disease (GERD)",
+    "diagnostic_status": "suspected",
+    "secondary_diagnoses": [
+      {
+        "diagnosis": "Overweight (BMI 27.2 kg/m²)",
+        "status": "confirmed"
+      }
+    ],
+    "clinical_assessment": "Typical reflux symptoms (heartburn and regurgitation) without alarm features in a patient under 60 years of age. Clinical diagnosis of GERD is suspected, pending response to an empirical trial of a proton pump inhibitor. Overweight and occasional NSAID use may contribute.",
+    "treatment_provided": [
+      "Empirical proton pump inhibitor trial started",
+      "Lifestyle advice"
+    ],
+    "prescribed_medications": [
+      {
+        "name": "Omeprazole",
+        "dose": "20 mg",
+        "route": "Oral",
+        "frequency": "Once daily, 30 minutes before breakfast",
+        "duration": "8 weeks",
+        "indication": "Suspected gastroesophageal reflux disease"
+      }
+    ],
+    "procedures": [],
+    "treatment_recommendations": [
+      "Avoid eating within 3 hours of going to bed",
+      "Raise the head of the bed",
+      "Gradual weight reduction",
+      "Reduce alcohol, coffee and large fatty meals",
+      "Use paracetamol instead of ibuprofen for headaches"
+    ],
+    "clinical_progress": "Initial consultation; treatment started at this visit and progress has not yet been assessed.",
+    "response_to_treatment": null,
+    "warning_signs": [
+      "Difficulty or pain when swallowing",
+      "Vomiting blood or black, tarry stools",
+      "Unintentional weight loss",
+      "Chest pain on exertion",
+      "Persistent vomiting"
+    ],
+    "follow_up_plan": "Review in 8 weeks to assess response to omeprazole; if symptoms persist despite treatment, consider referral for upper gastrointestinal endoscopy.",
+    "follow_up_interval": "8 weeks",
+    "glossary_terms": [
+      {
+        "term": "Gastroesophageal reflux",
+        "definition_en": "The backward flow of stomach contents into the oesophagus, which can cause heartburn.",
+        "definition_es": "Paso del contenido del estómago hacia el esófago, que puede causar ardor o acidez."
+      },
+      {
+        "term": "Proton pump inhibitor",
+        "definition_en": "A class of medicines that reduce the production of stomach acid.",
+        "definition_es": "Grupo de medicamentos que reducen la producción de ácido en el estómago."
+      },
+      {
+        "term": "Alarm features",
+        "definition_en": "Warning symptoms, such as difficulty swallowing or bleeding, that suggest a more serious condition and need further tests.",
+        "definition_es": "Síntomas de alerta, como dificultad para tragar o sangrado, que sugieren una enfermedad más grave y requieren más pruebas."
+      }
+    ]
+  },
+  "HC006": {
+    "id": "HC006",
+    "full_name": "Javier Romero Delgado",
+    "fictional_identification_number": "SYN-ID-006",
+    "date_of_birth": "18/06/1988",
+    "age": 38,
+    "encounter_date": "27/10/2026",
+    "phone_number": "SYN-PHONE-006",
+    "email": "patient006@example.invalid",
+    "address": "Fictional Street 6, Example City",
+    "sex": "Male",
+    "reason_for_consultation": "Lower back pain after lifting heavy boxes at work.",
+    "medical_history": [],
+    "family_history": [],
+    "current_medications": [],
+    "allergies": [
+      "No known drug allergies"
+    ],
+    "symptoms": [
+      "Lower back pain without radiation below the knee",
+      "Pain worse with bending and lifting, relieved by rest",
+      "No numbness or tingling in the legs",
+      "No bladder or bowel dysfunction",
+      "No numbness in the saddle area",
+      "No fever"
+    ],
+    "symptom_onset": "Sudden, 5 days before the encounter, while lifting boxes at work",
+    "symptom_duration": "5 days",
+    "symptom_frequency": "Constant, with exacerbations on movement",
+    "symptom_severity": "Moderate (6/10 on numerical rating scale)",
+    "vital_signs": {
+      "blood_pressure_mmHg": "126/80",
+      "heart_rate_bpm": 76,
+      "respiratory_rate_bpm": 14,
+      "temperature_celsius": 36.5,
+      "oxygen_saturation_percent": null,
+      "weight_kg": null,
+      "height_m": null,
+      "bmi_kg_m2": null
+    },
+    "physical_examination": [
+      "Tenderness and muscle spasm of the lumbar paravertebral muscles",
+      "Lumbar flexion limited by pain",
+      "Straight leg raise test negative bilaterally",
+      "Normal lower limb strength, reflexes and sensation",
+      "No midline spinal tenderness"
+    ],
+    "laboratory_results": [],
+    "imaging_results": [],
+    "other_investigations": [],
+    "primary_diagnosis": "Acute non-specific mechanical lower back pain",
+    "diagnostic_status": "confirmed",
+    "secondary_diagnoses": [],
+    "clinical_assessment": "Acute mechanical lower back pain related to lifting, with a normal neurological examination and no red flags (no trauma, fever, weight loss, history of cancer, saddle anaesthesia or sphincter dysfunction). Imaging is not indicated. Favourable prognosis is expected with conservative management.",
+    "treatment_provided": [
+      "Analgesic therapy",
+      "Advice to remain active"
+    ],
+    "prescribed_medications": [
+      {
+        "name": "Ibuprofen",
+        "dose": "400 mg",
+        "route": "Oral",
+        "frequency": "Every 8 hours with food",
+        "duration": "Up to 7 days",
+        "indication": "Lower back pain"
+      }
+    ],
+    "procedures": [],
+    "treatment_recommendations": [
+      "Stay active and avoid bed rest",
+      "Apply local heat for pain relief",
+      "Gradual return to normal activities and work, avoiding heavy lifting for 2 weeks",
+      "Use safe lifting technique"
+    ],
+    "clinical_progress": "Initial consultation; treatment started at this visit and progress has not yet been assessed.",
+    "response_to_treatment": null,
+    "warning_signs": [
+      "Numbness in the groin or buttocks",
+      "Loss of bladder or bowel control",
+      "Weakness in one or both legs",
+      "Fever with back pain",
+      "Severe pain at night that does not improve with rest"
+    ],
+    "follow_up_plan": "Review in 2 weeks if pain has not improved; refer to physiotherapy if symptoms persist beyond 4–6 weeks.",
+    "follow_up_interval": "2 weeks if no improvement",
+    "glossary_terms": [
+      {
+        "term": "Straight leg raise test",
+        "definition_en": "A physical examination test in which the straightened leg is lifted to check for irritation of a spinal nerve root.",
+        "definition_es": "Prueba de exploración física en la que se eleva la pierna estirada para comprobar si existe irritación de una raíz nerviosa de la columna."
+      },
+      {
+        "term": "Cauda equina syndrome",
+        "definition_en": "A rare emergency caused by compression of the nerve roots at the lower end of the spinal canal.",
+        "definition_es": "Urgencia poco frecuente causada por la compresión de las raíces nerviosas en la parte inferior del canal vertebral."
+      },
+      {
+        "term": "NSAID",
+        "definition_en": "Non-steroidal anti-inflammatory drug; a medicine that reduces pain and inflammation.",
+        "definition_es": "Antiinflamatorio no esteroideo; medicamento que reduce el dolor y la inflamación."
+      }
+    ]
+  },
+  "HC007": {
+    "id": "HC007",
+    "full_name": "María José Herrera Lozano",
+    "fictional_identification_number": "SYN-ID-007",
+    "date_of_birth": "05/10/1993",
+    "age": 33,
+    "encounter_date": "28/10/2026",
+    "phone_number": "SYN-PHONE-007",
+    "email": "patient007@example.invalid",
+    "address": "Fictional Street 7, Example City",
+    "sex": "Female",
+    "reason_for_consultation": "Burning on urination and frequent urge to urinate for 2 days.",
+    "medical_history": [],
+    "family_history": [],
+    "current_medications": [],
+    "allergies": [
+      "Penicillin (skin rash)"
+    ],
+    "symptoms": [
+      "Burning pain on urination (dysuria)",
+      "Increased urinary frequency",
+      "Urinary urgency",
+      "Lower abdominal (suprapubic) discomfort",
+      "No fever",
+      "No flank pain",
+      "No vaginal discharge"
+    ],
+    "symptom_onset": "2 days before the encounter",
+    "symptom_duration": "2 days",
+    "symptom_frequency": "With every void",
+    "symptom_severity": "Moderate",
+    "vital_signs": {
+      "blood_pressure_mmHg": "114/72",
+      "heart_rate_bpm": 78,
+      "respiratory_rate_bpm": 14,
+      "temperature_celsius": 36.8,
+      "oxygen_saturation_percent": null,
+      "weight_kg": null,
+      "height_m": null,
+      "bmi_kg_m2": null
+    },
+    "physical_examination": [
+      "Mild suprapubic tenderness",
+      "No costovertebral angle tenderness",
+      "Abdomen soft without guarding"
+    ],
+    "laboratory_results": [
+      {
+        "test": "Urine dipstick: leukocyte esterase",
+        "result": "Positive",
+        "unit": null,
+        "reference_range": "Negative",
+        "interpretation": "Abnormal"
+      },
+      {
+        "test": "Urine dipstick: nitrites",
+        "result": "Positive",
+        "unit": null,
+        "reference_range": "Negative",
+        "interpretation": "Abnormal"
+      },
+      {
+        "test": "Urine dipstick: blood",
+        "result": "Trace",
+        "unit": null,
+        "reference_range": "Negative",
+        "interpretation": "Abnormal"
+      },
+      {
+        "test": "Urine pregnancy test",
+        "result": "Negative",
+        "unit": null,
+        "reference_range": "Negative",
+        "interpretation": "Normal"
+      },
+      {
+        "test": "Urine culture",
+        "result": "Pending",
+        "unit": null,
+        "reference_range": null,
+        "interpretation": "Pending"
+      }
+    ],
+    "imaging_results": [],
+    "other_investigations": [],
+    "primary_diagnosis": "Acute uncomplicated lower urinary tract infection (cystitis)",
+    "diagnostic_status": "confirmed",
+    "secondary_diagnoses": [],
+    "clinical_assessment": "Typical lower urinary tract symptoms with positive leukocyte esterase and nitrites in a non-pregnant woman without fever or flank pain, consistent with uncomplicated cystitis. No signs of pyelonephritis. Penicillin allergy considered in antibiotic choice. Urine culture sent to confirm the organism and susceptibility.",
+    "treatment_provided": [
+      "Oral antibiotic therapy started"
+    ],
+    "prescribed_medications": [
+      {
+        "name": "Nitrofurantoin (modified release)",
+        "dose": "100 mg",
+        "route": "Oral",
+        "frequency": "Twice daily with food",
+        "duration": "5 days",
+        "indication": "Uncomplicated cystitis"
+      }
+    ],
+    "procedures": [
+      "Midstream urine sample for dipstick and culture"
+    ],
+    "treatment_recommendations": [
+      "Drink adequate fluids",
+      "Complete the full antibiotic course",
+      "Paracetamol may be used for discomfort"
+    ],
+    "clinical_progress": "Initial consultation; treatment started at this visit and progress has not yet been assessed.",
+    "response_to_treatment": null,
+    "warning_signs": [
+      "Fever or chills",
+      "Pain in the side or back (flank pain)",
+      "Nausea or vomiting",
+      "Visible blood in the urine",
+      "Symptoms not improving after 48 hours of antibiotics"
+    ],
+    "follow_up_plan": "Urine culture result to be reviewed in 48–72 hours and antibiotic adjusted if the organism is resistant; return earlier if warning signs appear.",
+    "follow_up_interval": "48–72 hours",
+    "glossary_terms": [
+      {
+        "term": "Cystitis",
+        "definition_en": "Inflammation of the bladder, most often caused by a bacterial infection.",
+        "definition_es": "Inflamación de la vejiga, causada con mayor frecuencia por una infección bacteriana."
+      },
+      {
+        "term": "Nitrites (urine test)",
+        "definition_en": "Substances produced by some bacteria in urine; their presence on a dipstick suggests a bacterial infection.",
+        "definition_es": "Sustancias producidas por algunas bacterias en la orina; su presencia en una tira reactiva sugiere una infección bacteriana."
+      },
+      {
+        "term": "Urine culture",
+        "definition_en": "A laboratory test that grows bacteria from a urine sample to identify them and test which antibiotics work.",
+        "definition_es": "Prueba de laboratorio que cultiva las bacterias de una muestra de orina para identificarlas y comprobar qué antibióticos son eficaces."
+      }
+    ]
+  },
+  "HC008": {
+    "id": "HC008",
+    "full_name": "Sofía Medina Vargas",
+    "fictional_identification_number": "SYN-ID-008",
+    "date_of_birth": "12/01/1990",
+    "age": 36,
+    "encounter_date": "29/10/2026",
+    "phone_number": "SYN-PHONE-008",
+    "email": "patient008@example.invalid",
+    "address": "Fictional Street 8, Example City",
+    "sex": "Female",
+    "reason_for_consultation": "Tiredness and breathlessness on exertion; review of blood test results.",
+    "medical_history": [
+      "Heavy menstrual periods for approximately 1 year"
+    ],
+    "family_history": [],
+    "current_medications": [],
+    "allergies": [
+      "No known drug allergies"
+    ],
+    "symptoms": [
+      "Fatigue",
+      "Shortness of breath on climbing stairs",
+      "Reduced exercise tolerance",
+      "No chest pain",
+      "No black stools",
+      "No change in bowel habit",
+      "No weight loss"
+    ],
+    "symptom_onset": "Gradual, approximately 3 months before the encounter",
+    "symptom_duration": "3 months",
+    "symptom_frequency": "Daily",
+    "symptom_severity": "Moderate",
+    "vital_signs": {
+      "blood_pressure_mmHg": "108/68",
+      "heart_rate_bpm": 92,
+      "respiratory_rate_bpm": 16,
+      "temperature_celsius": 36.4,
+      "oxygen_saturation_percent": 99,
+      "weight_kg": null,
+      "height_m": null,
+      "bmi_kg_m2": null
+    },
+    "physical_examination": [
+      "Pale conjunctivae",
+      "Soft systolic flow murmur at the left sternal border",
+      "No hepatosplenomegaly",
+      "No palpable lymphadenopathy"
+    ],
+    "laboratory_results": [
+      {
+        "test": "Haemoglobin",
+        "result": 9.8,
+        "unit": "g/dL",
+        "reference_range": "12.0–15.5",
+        "interpretation": "Low"
+      },
+      {
+        "test": "Mean corpuscular volume (MCV)",
+        "result": 72,
+        "unit": "fL",
+        "reference_range": "80–100",
+        "interpretation": "Low"
+      },
+      {
+        "test": "Mean corpuscular haemoglobin (MCH)",
+        "result": 23,
+        "unit": "pg",
+        "reference_range": "27–33",
+        "interpretation": "Low"
+      },
+      {
+        "test": "Serum ferritin",
+        "result": 6,
+        "unit": "ng/mL",
+        "reference_range": "15–150",
+        "interpretation": "Low"
+      },
+      {
+        "test": "Transferrin saturation",
+        "result": 7,
+        "unit": "%",
+        "reference_range": "20–45",
+        "interpretation": "Low"
+      },
+      {
+        "test": "Platelet count",
+        "result": 410,
+        "unit": "×10⁹/L",
+        "reference_range": "150–400",
+        "interpretation": "Slightly high"
+      },
+      {
+        "test": "Anti-tissue transglutaminase IgA (with normal total IgA)",
+        "result": "Negative",
+        "unit": null,
+        "reference_range": "Negative",
+        "interpretation": "Normal"
+      }
+    ],
+    "imaging_results": [],
+    "other_investigations": [
+      "Pelvic ultrasound requested; result pending"
+    ],
+    "primary_diagnosis": "Iron-deficiency anaemia",
+    "diagnostic_status": "confirmed",
+    "secondary_diagnoses": [
+      {
+        "diagnosis": "Heavy menstrual bleeding as the probable cause of iron loss",
+        "status": "suspected"
+      }
+    ],
+    "clinical_assessment": "Microcytic, hypochromic anaemia with very low ferritin and transferrin saturation confirms iron-deficiency anaemia. Heavy menstrual bleeding is the most likely cause; coeliac serology is negative and there are no gastrointestinal symptoms. The mild rise in platelets is consistent with iron deficiency. Haemodynamically stable; oral iron is appropriate.",
+    "treatment_provided": [
+      "Oral iron supplementation started",
+      "Dietary advice"
+    ],
+    "prescribed_medications": [
+      {
+        "name": "Ferrous sulfate",
+        "dose": "325 mg (65 mg elemental iron)",
+        "route": "Oral",
+        "frequency": "Once daily on an empty stomach",
+        "duration": "Until haemoglobin normalises, then for a further 3 months",
+        "indication": "Iron-deficiency anaemia"
+      }
+    ],
+    "procedures": [],
+    "treatment_recommendations": [
+      "Take iron with water or orange juice, not with tea, coffee or milk",
+      "Iron-rich diet",
+      "Black stools are an expected effect of iron tablets",
+      "Referral to gynaecology for evaluation of heavy menstrual bleeding"
+    ],
+    "clinical_progress": "Initial diagnostic consultation; treatment started at this visit and progress has not yet been assessed.",
+    "response_to_treatment": null,
+    "warning_signs": [
+      "Chest pain or palpitations",
+      "Fainting or severe dizziness",
+      "Severe breathlessness at rest",
+      "Very heavy menstrual bleeding soaking a pad every hour"
+    ],
+    "follow_up_plan": "Repeat full blood count in 4 weeks to confirm haemoglobin is rising; review pelvic ultrasound result and gynaecology assessment; check ferritin after completing treatment.",
+    "follow_up_interval": "4 weeks",
+    "glossary_terms": [
+      {
+        "term": "Ferritin",
+        "definition_en": "A protein that stores iron; low blood levels indicate that the body's iron stores are depleted.",
+        "definition_es": "Proteína que almacena hierro; niveles bajos en sangre indican que las reservas de hierro del cuerpo están agotadas."
+      },
+      {
+        "term": "Microcytic anaemia",
+        "definition_en": "Anaemia in which red blood cells are smaller than normal, typically due to iron deficiency.",
+        "definition_es": "Anemia en la que los glóbulos rojos son más pequeños de lo normal, generalmente por falta de hierro."
+      },
+      {
+        "term": "Mean corpuscular volume (MCV)",
+        "definition_en": "A blood test value that measures the average size of red blood cells.",
+        "definition_es": "Valor de un análisis de sangre que mide el tamaño medio de los glóbulos rojos."
+      }
+    ]
+  },
+  "HC009": {
+    "id": "HC009",
+    "full_name": "Manuel Fuentes Aguilar",
+    "fictional_identification_number": "SYN-ID-009",
+    "date_of_birth": "27/11/1961",
+    "age": 64,
+    "encounter_date": "30/10/2026",
+    "phone_number": "SYN-PHONE-009",
+    "email": "patient009@example.invalid",
+    "address": "Fictional Street 9, Example City",
+    "sex": "Male",
+    "reason_for_consultation": "Persistent hoarseness; review of laryngeal biopsy and staging results.",
+    "medical_history": [
+      "Hypertension",
+      "Active smoker, 40 pack-years",
+      "Alcohol intake of 2–3 units per day"
+    ],
+    "family_history": [],
+    "current_medications": [
+      {
+        "name": "Amlodipine",
+        "dose": "5 mg",
+        "route": "Oral",
+        "frequency": "Once daily",
+        "duration": "Long-term",
+        "indication": "Hypertension"
+      }
+    ],
+    "allergies": [
+      "No known drug allergies"
+    ],
+    "symptoms": [
+      "Hoarseness (dysphonia), progressively worsening",
+      "No difficulty swallowing",
+      "No pain on swallowing",
+      "No noisy breathing (stridor)",
+      "No coughing up blood",
+      "No weight loss",
+      "No neck lump"
+    ],
+    "symptom_onset": "Gradual, approximately 3 months before the encounter",
+    "symptom_duration": "3 months",
+    "symptom_frequency": "Constant",
+    "symptom_severity": "Moderate",
+    "vital_signs": {
+      "blood_pressure_mmHg": "136/84",
+      "heart_rate_bpm": 76,
+      "respiratory_rate_bpm": 14,
+      "temperature_celsius": null,
+      "oxygen_saturation_percent": 97,
+      "weight_kg": null,
+      "height_m": null,
+      "bmi_kg_m2": null
+    },
+    "physical_examination": [
+      "Hoarse, breathy voice",
+      "Flexible videolaryngoscopy: irregular exophytic lesion on the middle third of the right vocal fold, not involving the anterior commissure",
+      "Normal mobility of both vocal folds",
+      "No palpable cervical lymphadenopathy"
+    ],
+    "laboratory_results": [
+      {
+        "test": "Histopathology of right vocal fold biopsy (14/10/2026)",
+        "result": "Well-differentiated invasive squamous cell carcinoma",
+        "unit": null,
+        "reference_range": null,
+        "interpretation": "Malignant"
+      }
+    ],
+    "imaging_results": [
+      "Contrast-enhanced CT of the neck: lesion confined to the right vocal fold, no laryngeal cartilage invasion, no cervical lymphadenopathy",
+      "CT of the chest: no pulmonary nodules or distant metastases"
+    ],
+    "other_investigations": [
+      "Clinical stage: cT1a N0 M0 (AJCC 8th edition)"
+    ],
+    "primary_diagnosis": "Dysphonia associated with squamous cell carcinoma of the glottis (right vocal fold), stage cT1a N0 M0",
+    "diagnostic_status": "confirmed",
+    "secondary_diagnoses": [
+      {
+        "diagnosis": "Tobacco use (active smoker, 40 pack-years)",
+        "status": "confirmed"
+      }
+    ],
+    "clinical_assessment": "Progressive dysphonia caused by early-stage glottic squamous cell carcinoma confined to one vocal fold with normal mobility, confirmed by biopsy. Staging CT shows no nodal or distant spread. Smoking and alcohol are the main risk factors. Early glottic cancer has a good prognosis with single-modality treatment.",
+    "treatment_provided": [
+      "Diagnosis and staging results discussed with the patient",
+      "Smoking cessation counselling",
+      "Referral to the head and neck multidisciplinary tumour board"
+    ],
+    "prescribed_medications": [],
+    "procedures": [
+      "Direct microlaryngoscopy with biopsy of the right vocal fold (performed 14/10/2026)"
+    ],
+    "treatment_recommendations": [
+      "Multidisciplinary tumour board to decide between radiotherapy and transoral laser microsurgery",
+      "Referral to a smoking cessation programme",
+      "Reduce alcohol intake",
+      "Continue current antihypertensive medication"
+    ],
+    "clinical_progress": "Hoarseness unchanged since the biopsy; definitive cancer treatment has not yet started.",
+    "response_to_treatment": null,
+    "warning_signs": [
+      "Difficulty breathing or noisy breathing",
+      "Coughing up blood",
+      "Difficulty or pain when swallowing",
+      "New lump in the neck"
+    ],
+    "follow_up_plan": "Case to be presented at the head and neck multidisciplinary tumour board on 06/11/2026; ENT appointment within 2 weeks to discuss the treatment decision.",
+    "follow_up_interval": "2 weeks",
+    "glossary_terms": [
+      {
+        "term": "Dysphonia",
+        "definition_en": "Any change in voice quality, such as hoarseness, weakness or strain.",
+        "definition_es": "Cualquier alteración en la calidad de la voz, como ronquera, debilidad o esfuerzo al hablar."
+      },
+      {
+        "term": "Glottis",
+        "definition_en": "The part of the larynx that contains the vocal folds and the space between them.",
+        "definition_es": "Parte de la laringe que contiene las cuerdas vocales y el espacio que hay entre ellas."
+      },
+      {
+        "term": "Squamous cell carcinoma",
+        "definition_en": "A type of cancer that arises from the flat cells lining surfaces such as the throat and larynx.",
+        "definition_es": "Tipo de cáncer que se origina en las células planas que recubren superficies como la garganta y la laringe."
+      },
+      {
+        "term": "TNM staging",
+        "definition_en": "A system that describes the size of a tumour (T), spread to lymph nodes (N) and distant spread (M).",
+        "definition_es": "Sistema que describe el tamaño del tumor (T), la afectación de los ganglios linfáticos (N) y la diseminación a distancia (M)."
+      }
+    ]
+  },
+  "HC010": {
+    "id": "HC010",
+    "full_name": "Alejandro Peña Robles",
+    "fictional_identification_number": "SYN-ID-010",
+    "date_of_birth": "14/02/1984",
+    "age": 42,
+    "encounter_date": "31/10/2026",
+    "phone_number": "SYN-PHONE-010",
+    "email": "patient010@example.invalid",
+    "address": "Fictional Street 10, Example City",
+    "sex": "Male",
+    "reason_for_consultation": "Sudden severe chest pain at rest; emergency admission.",
+    "medical_history": [
+      "Unprovoked deep vein thrombosis of the right leg in 2023, treated with rivaroxaban for 6 months and then stopped",
+      "Non-smoker",
+      "No diabetes"
+    ],
+    "family_history": [
+      "Mother with recurrent deep vein thrombosis"
+    ],
+    "current_medications": [],
+    "allergies": [
+      "No known drug allergies"
+    ],
+    "symptoms": [
+      "Crushing central chest pain radiating to the left arm",
+      "Sweating",
+      "Nausea",
+      "No syncope"
+    ],
+    "symptom_onset": "Sudden, at rest, 90 minutes before arrival at hospital",
+    "symptom_duration": "90 minutes before arrival; resolved after reperfusion",
+    "symptom_frequency": "Continuous",
+    "symptom_severity": "Severe (9/10 on numerical rating scale)",
+    "vital_signs": {
+      "blood_pressure_mmHg": "132/84",
+      "heart_rate_bpm": 58,
+      "respiratory_rate_bpm": 18,
+      "temperature_celsius": 36.7,
+      "oxygen_saturation_percent": 96,
+      "weight_kg": null,
+      "height_m": null,
+      "bmi_kg_m2": null
+    },
+    "physical_examination": [
+      "Diaphoretic and in pain on arrival",
+      "Regular heart sounds without murmurs",
+      "Clear lung fields; no signs of heart failure",
+      "No leg swelling"
+    ],
+    "laboratory_results": [
+      {
+        "test": "High-sensitivity troponin T (admission)",
+        "result": 980,
+        "unit": "ng/L",
+        "reference_range": "<14",
+        "interpretation": "High"
+      },
+      {
+        "test": "Anticardiolipin IgG antibodies",
+        "result": 62,
+        "unit": "GPL units",
+        "reference_range": "<20",
+        "interpretation": "High"
+      },
+      {
+        "test": "Anti-beta-2-glycoprotein I IgG antibodies",
+        "result": 48,
+        "unit": "U/mL",
+        "reference_range": "<20",
+        "interpretation": "High"
+      },
+      {
+        "test": "Lupus anticoagulant",
+        "result": "Not interpretable (sample taken during heparin therapy)",
+        "unit": null,
+        "reference_range": null,
+        "interpretation": "Not interpretable"
+      },
+      {
+        "test": "Factor V Leiden mutation",
+        "result": "Not detected",
+        "unit": null,
+        "reference_range": "Not detected",
+        "interpretation": "Normal"
+      },
+      {
+        "test": "Prothrombin G20210A mutation",
+        "result": "Not detected",
+        "unit": null,
+        "reference_range": "Not detected",
+        "interpretation": "Normal"
+      },
+      {
+        "test": "LDL cholesterol",
+        "result": 104,
+        "unit": "mg/dL",
+        "reference_range": "<116",
+        "interpretation": "Normal"
+      }
+    ],
+    "imaging_results": [
+      "Emergency coronary angiography: thrombotic occlusion of the proximal right coronary artery; no significant atherosclerosis in the other coronary arteries",
+      "Transthoracic echocardiogram: inferior wall hypokinesia, left ventricular ejection fraction 50%"
+    ],
+    "other_investigations": [
+      "12-lead ECG on arrival: ST-segment elevation of 2.5 mm in leads II, III and aVF with reciprocal ST depression in leads I and aVL",
+      "Continuous cardiac monitoring: no ventricular arrhythmias"
+    ],
+    "primary_diagnosis": "Inferior ST-elevation myocardial infarction (STEMI) due to thrombotic occlusion of the right coronary artery",
+    "diagnostic_status": "confirmed",
+    "secondary_diagnoses": [
+      {
+        "diagnosis": "Hypercoagulable state: probable antiphospholipid syndrome (requires repeat antibody testing at 12 weeks for confirmation)",
+        "status": "suspected"
+      }
+    ],
+    "clinical_assessment": "Inferior STEMI with markedly raised troponin and thrombotic right coronary occlusion in a young non-smoker without significant atherosclerosis. Previous unprovoked venous thrombosis, a family history of thrombosis and high-titre anticardiolipin and anti-beta-2-glycoprotein I antibodies suggest an underlying hypercoagulable state, probably antiphospholipid syndrome, which requires confirmation. Successful reperfusion with preserved left ventricular function.",
+    "treatment_provided": [
+      "Aspirin 300 mg and ticagrelor 180 mg oral loading doses",
+      "Intravenous unfractionated heparin during the procedure",
+      "Primary percutaneous coronary intervention"
+    ],
+    "prescribed_medications": [
+      {
+        "name": "Aspirin",
+        "dose": "100 mg",
+        "route": "Oral",
+        "frequency": "Once daily",
+        "duration": "Long-term",
+        "indication": "Secondary prevention after myocardial infarction"
+      },
+      {
+        "name": "Ticagrelor",
+        "dose": "90 mg",
+        "route": "Oral",
+        "frequency": "Twice daily",
+        "duration": "12 months",
+        "indication": "Dual antiplatelet therapy after coronary stent"
+      },
+      {
+        "name": "Atorvastatin",
+        "dose": "80 mg",
+        "route": "Oral",
+        "frequency": "Once daily",
+        "duration": "Long-term",
+        "indication": "Secondary prevention after myocardial infarction"
+      },
+      {
+        "name": "Bisoprolol",
+        "dose": "2.5 mg",
+        "route": "Oral",
+        "frequency": "Once daily",
+        "duration": "Long-term",
+        "indication": "Secondary prevention after myocardial infarction"
+      }
+    ],
+    "procedures": [
+      "Primary percutaneous coronary intervention with thrombus aspiration and drug-eluting stent implantation in the proximal right coronary artery, with final TIMI grade 3 flow"
+    ],
+    "treatment_recommendations": [
+      "Haematology consultation regarding a long-term anticoagulation strategy",
+      "Cardiac rehabilitation programme",
+      "Do not stop antiplatelet medicines without consulting cardiology",
+      "Heart-healthy diet and gradual increase in physical activity"
+    ],
+    "clinical_progress": "Chest pain resolved immediately after reperfusion. During the first 72 hours the patient remained haemodynamically stable, without recurrent chest pain, arrhythmias or signs of heart failure.",
+    "response_to_treatment": "Successful reperfusion with TIMI grade 3 flow and resolution of chest pain after primary PCI.",
+    "warning_signs": [
+      "Recurrent chest pain lasting more than 5 minutes",
+      "Shortness of breath or fainting",
+      "Bleeding that does not stop or black stools",
+      "Painful swelling of a leg"
+    ],
+    "follow_up_plan": "Cardiology review 4 weeks after discharge; haematology review with repeat antiphospholipid antibody and lupus anticoagulant testing at least 12 weeks after the first test; enrolment in cardiac rehabilitation.",
+    "follow_up_interval": "4 weeks (cardiology); 12 weeks (haematology)",
+    "glossary_terms": [
+      {
+        "term": "STEMI",
+        "definition_en": "A heart attack in which a coronary artery is completely blocked, shown by ST-segment elevation on the ECG.",
+        "definition_es": "Infarto de miocardio en el que una arteria coronaria está completamente obstruida, lo que se refleja en una elevación del segmento ST en el electrocardiograma."
+      },
+      {
+        "term": "Percutaneous coronary intervention",
+        "definition_en": "A procedure that opens a blocked coronary artery using a catheter, a balloon and usually a stent.",
+        "definition_es": "Procedimiento que abre una arteria coronaria obstruida mediante un catéter, un balón y, generalmente, un stent."
+      },
+      {
+        "term": "Antiphospholipid syndrome",
+        "definition_en": "An autoimmune condition in which antibodies increase the tendency of blood to form clots in veins or arteries.",
+        "definition_es": "Enfermedad autoinmune en la que ciertos anticuerpos aumentan la tendencia de la sangre a formar coágulos en venas o arterias."
+      },
+      {
+        "term": "Troponin",
+        "definition_en": "A heart muscle protein released into the blood when the heart muscle is damaged.",
+        "definition_es": "Proteína del músculo cardíaco que se libera a la sangre cuando el músculo del corazón sufre daño."
+      }
+    ]
+  }
+}

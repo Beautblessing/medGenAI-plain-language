@@ -1,0 +1,11 @@
+# Preserve the vendored AlignScore source exactly as received. Its upstream
+# files contain historical trailing whitespace that is not part of this project.
+AlignScore/** whitespace=-blank-at-eol,-blank-at-eof
+
+# Normalize text files across platforms.
+*.py text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.csv text eol=lf

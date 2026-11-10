@@ -1,0 +1,64 @@
+MASTER PROMPT 5.1 — CLINICAL NLP EVALUATION WORKSPACE BUILT AROUND A SINGLE PROMPT 4.1 RELEASE
+Prompt version: 5.1.0 (derived from Master Prompt 5.0.0)
+Application: medGenAI_4_1 — a separate copy of the Clinical Reference Sign-off and Freeze application
+Submission priority: functional, reproducible research prototype for 10 November 2026
+
+WHAT CHANGES FROM 5.0
+Prompt 5.0 integrated two narrative releases (Prompt 4.1 original and Prompt 4.2 corrected) into the existing app.
+Prompt 5.1 uses ONE narrative release only, the Claude Prompt 4.1 generation-only package, because its automated
+evaluation found no clinical errors requiring an editorial correction pass. Prompt 4.2 is not used. Everything in
+5.0 not changed below still applies (roles, governance, Workspace A preservation, transformation pipeline,
+evaluation engine, metrics, testing, provenance, exports, error handling, acceptance gates).
+
+1. APPLICATION
+  - Build a separate application folder (medGenAI_4_1) by copying the working application. The original app stays
+    unchanged as a fallback. Do not build a new app from scratch.
+  - Keep both workspaces: A. Clinical Reference Sign-off and Freeze (unchanged), B. Clinical NLP Evaluation.
+
+2. APPROVED REFERENCE (unchanged from 5.0)
+  Freeze SHA-256 11643597900d00351770f44f358264dab6c181ba3c67cc7811b7cbc26e4d8f0f
+  Raw dataset SHA-256 710fdb5e4373f5d16ccbf64ddc6b3207b16ebefc0cdaf5ac9b1820e1a9c7806a
+  Canonical dataset SHA-256 08567e1be79e321263fb3d9b3a306d9b2c9a645e14898706d4accef2952b447e
+  Exactly HC0001–HC0010. Read-only reference adapter. Track B not used.
+
+3. THE NARRATIVE RELEASE (replaces 5.0 section 7 "Known narrative releases")
+  Prompt 4.1 — Claude generation (generation-only package)
+  Expected ZIP SHA-256: 374910b82d732c4fa6101a421d4d4caf66b8c62eeca327a7b6210184ed8ce120
+  Its 40 texts are identical to the evaluated combined Prompt 4.1 package (93c2dc23…).
+  Status: candidate pending independent clinical and bilingual review; a technical pass is not approval.
+  Headings expected by the evaluator:
+    Professional EN: REASON FOR CONSULTATION · CLINICAL HISTORY · EXAMINATION AND INVESTIGATIONS ·
+                     ASSESSMENT AND DIAGNOSIS · TREATMENT AND CLINICAL COURSE · FOLLOW-UP AND WARNING SIGNS
+    Professional ES: MOTIVO DE CONSULTA · HISTORIA CLÍNICA · EXPLORACIÓN Y PRUEBAS COMPLEMENTARIAS ·
+                     VALORACIÓN CLÍNICA Y DIAGNÓSTICO · TRATAMIENTO Y EVOLUCIÓN · SEGUIMIENTO Y SIGNOS DE ALARMA
+    Patient EN: Why you came · What we found · What this means · Your treatment · Warning signs · Follow-up
+    Patient ES: Por qué vino · Qué encontramos · Qué significa · Su tratamiento · Signos de alarma · Seguimiento
+  Any other uploaded archive or JSON is registered separately as an "External candidate" (unverified if it lacks a
+  trusted manifest) and never replaces or overwrites the Prompt 4.1 release. No other package is bundled.
+
+4. VIEWER (replaces the release-vs-release comparison of 5.0 section 9)
+  Side-by-side: professional vs patient explanation (same language) and English vs Spanish (same release).
+  The "Prompt 4.1 vs Prompt 4.2" comparison is removed. Show provenance, review status, the authoritative
+  structured record and the approved-reference limitations read-only.
+
+5. TRANSFORMATIONS (as 5.0 sections 10–13)
+  Anonymization: deterministic replacement of known synthetic identifiers, with a per-category replacement table
+  and clinical-number preservation check. Summarization and plain-language adaptation: a pinned local Hugging Face
+  instruct model (Qwen/Qwen2.5-1.5B-Instruct, revision 989aa7980e4cf806f80c7fef2b1adb7bc71aa306, greedy decoding)
+  plus the deterministic rule baselines as labelled fallbacks. Generated outputs stay separate from the Prompt 4.1
+  narratives; the Prompt 4.1 patient explanations are comparison references, not ground truth.
+
+6. COMPARISONS (replaces 4.1-vs-4.2 items in 5.0 sections 19, 23, 28)
+  - Prompt 4.1 professional narrative vs generated summary / plain-language output.
+  - Generated plain-language output vs the Prompt 4.1 patient explanation (reference similarity only).
+  - English vs Spanish outputs of the same case and method.
+  - Method vs method (rule baseline vs local model) over the 10 cases.
+  - Baseline: the Prompt 4.1 patient explanations scored as plain-language outputs.
+
+7. TESTS (replaces "Prompt 4.1 ZIP import / Prompt 4.2 ZIP import" in 5.0 section 28)
+  - Prompt 4.1 ZIP (374910b8) imports with verified provenance, all internal checksums, exact CSV-to-JSON equality.
+  - Only this release is known/bundled; an external upload is registered separately and does not overwrite it.
+  - All other Workspace A regression, Workspace B and isolation tests from 5.0 remain.
+
+8. ACCEPTANCE (Gate B adjusted)
+  Gate B: the Prompt 4.1 package can be imported, validated, registered and viewed. Gates A, C, D, E, F as in 5.0.

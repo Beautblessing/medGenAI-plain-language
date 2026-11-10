@@ -1,0 +1,1546 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/clinical_records_schema_v1.2.1.json",
+  "title": "Synthetic Bilingual Clinical Records Reference Schema V1.2.1",
+  "description": "Version 1.2.1: exactly ten entirely synthetic patient records, each with thirteen sections. Structural validation only; clinical fidelity and chronology need separate review.",
+  "type": "object",
+  "properties": {
+    "HC0001": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/patient_record"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "patient_information": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "HC0001"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "HC0002": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/patient_record"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "patient_information": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "HC0002"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "HC0003": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/patient_record"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "patient_information": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "HC0003"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "HC0004": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/patient_record"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "patient_information": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "HC0004"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "HC0005": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/patient_record"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "patient_information": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "HC0005"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "HC0006": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/patient_record"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "patient_information": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "HC0006"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "HC0007": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/patient_record"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "patient_information": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "HC0007"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "HC0008": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/patient_record"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "patient_information": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "HC0008"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "HC0009": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/patient_record"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "patient_information": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "HC0009"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "HC0010": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/patient_record"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "patient_information": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": "HC0010"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "HC0001",
+    "HC0002",
+    "HC0003",
+    "HC0004",
+    "HC0005",
+    "HC0006",
+    "HC0007",
+    "HC0008",
+    "HC0009",
+    "HC0010"
+  ],
+  "minProperties": 10,
+  "maxProperties": 10,
+  "additionalProperties": false,
+  "$defs": {
+    "date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{2}/\\d{2}/\\d{4}$"
+    },
+    "textOrNull": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "nonemptyText": {
+      "type": "string",
+      "minLength": 1
+    },
+    "bilingual": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "es": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "en",
+        "es"
+      ],
+      "additionalProperties": false
+    },
+    "allergy": {
+      "type": "object",
+      "properties": {
+        "substance": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reaction": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "severity": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "reported",
+            "confirmed",
+            "suspected"
+          ]
+        }
+      },
+      "required": [
+        "substance",
+        "reaction",
+        "severity",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "symptom": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "presence": {
+          "type": "string",
+          "enum": [
+            "present",
+            "absent",
+            "unknown"
+          ]
+        },
+        "severity": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "duration": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "presence",
+        "severity",
+        "description",
+        "duration"
+      ],
+      "additionalProperties": false
+    },
+    "vital_signs": {
+      "type": "object",
+      "properties": {
+        "blood_pressure_mmHg": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "heart_rate_bpm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "respiratory_rate_bpm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "temperature_celsius": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "oxygen_saturation_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "weight_kg": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "height_m": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "bmi_kg_m2": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "laboratory_test": {
+      "type": "object",
+      "properties": {
+        "test_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "specimen": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "result": {
+          "type": [
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reference_range": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "interpretation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "planned",
+            "ordered",
+            "scheduled",
+            "performed",
+            "result_pending",
+            "completed",
+            "cancelled"
+          ]
+        },
+        "ordered_date": {
+          "$ref": "#/$defs/date"
+        },
+        "performed_date": {
+          "$ref": "#/$defs/date"
+        },
+        "result_date": {
+          "$ref": "#/$defs/date"
+        }
+      },
+      "required": [
+        "test_name",
+        "specimen",
+        "result",
+        "unit",
+        "reference_range",
+        "interpretation",
+        "status",
+        "ordered_date",
+        "performed_date",
+        "result_date"
+      ],
+      "additionalProperties": false
+    },
+    "imaging_study": {
+      "type": "object",
+      "properties": {
+        "modality": {
+          "type": "string",
+          "minLength": 1
+        },
+        "body_region": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "indication": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "planned",
+            "ordered",
+            "scheduled",
+            "performed",
+            "result_pending",
+            "completed",
+            "cancelled"
+          ]
+        },
+        "ordered_date": {
+          "$ref": "#/$defs/date"
+        },
+        "performed_date": {
+          "$ref": "#/$defs/date"
+        },
+        "findings": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "impression": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "modality",
+        "body_region",
+        "indication",
+        "status",
+        "ordered_date",
+        "performed_date",
+        "findings",
+        "impression"
+      ],
+      "additionalProperties": false
+    },
+    "other_investigation": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "purpose": {
+          "type": "string",
+          "enum": [
+            "diagnostic",
+            "therapeutic",
+            "both"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "planned",
+            "ordered",
+            "scheduled",
+            "performed",
+            "result_pending",
+            "completed",
+            "cancelled"
+          ]
+        },
+        "date": {
+          "$ref": "#/$defs/date"
+        },
+        "findings": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "interpretation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "purpose",
+        "status",
+        "date",
+        "findings",
+        "interpretation"
+      ],
+      "additionalProperties": false
+    },
+    "diagnosis": {
+      "type": "object",
+      "properties": {
+        "condition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "confirmed",
+            "suspected",
+            "ruled_out"
+          ]
+        },
+        "supporting_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "condition",
+        "status",
+        "supporting_evidence"
+      ],
+      "additionalProperties": false
+    },
+    "care_intervention": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "date": {
+          "$ref": "#/$defs/date"
+        }
+      },
+      "required": [
+        "description",
+        "status",
+        "date"
+      ],
+      "additionalProperties": false
+    },
+    "therapeutic_procedure": {
+      "type": "object",
+      "properties": {
+        "procedure_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "purpose": {
+          "type": "string",
+          "enum": [
+            "diagnostic",
+            "therapeutic",
+            "both"
+          ]
+        },
+        "indication": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "planned",
+            "scheduled",
+            "in_progress",
+            "completed",
+            "postponed",
+            "cancelled"
+          ]
+        },
+        "planned_date": {
+          "$ref": "#/$defs/date"
+        },
+        "performed_date": {
+          "$ref": "#/$defs/date"
+        },
+        "technique": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "outcome": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "complications": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "procedure_name",
+        "purpose",
+        "indication",
+        "status",
+        "planned_date",
+        "performed_date",
+        "technique",
+        "outcome",
+        "complications"
+      ],
+      "additionalProperties": false
+    },
+    "dose_instruction": {
+      "type": "object",
+      "properties": {
+        "time_of_day": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "morning",
+              "afternoon",
+              "evening",
+              "night",
+              "bedtime"
+            ]
+          }
+        },
+        "meal_relation": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "before breakfast",
+              "with breakfast",
+              "after breakfast",
+              "before lunch",
+              "with lunch",
+              "after lunch",
+              "before dinner",
+              "with dinner",
+              "after dinner",
+              "with food",
+              "on an empty stomach"
+            ]
+          }
+        },
+        "fixed_times": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d$"
+          }
+        },
+        "additional_instructions": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "time_of_day",
+        "meal_relation",
+        "fixed_times",
+        "additional_instructions"
+      ],
+      "additionalProperties": false
+    },
+    "administration_event": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "$ref": "#/$defs/date"
+        },
+        "time": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d$"
+        },
+        "dose_administered": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "route": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "setting": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "given",
+            "not_given",
+            "unknown"
+          ]
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "date",
+        "time",
+        "dose_administered",
+        "route",
+        "setting",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "medication": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "strength": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "route": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dose": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "frequency": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "duration": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dose_instruction": {
+          "$ref": "#/$defs/dose_instruction"
+        },
+        "indication": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lifecycle_status": {
+          "type": "string",
+          "enum": [
+            "planned",
+            "active",
+            "administered",
+            "discontinued",
+            "completed",
+            "historical"
+          ]
+        },
+        "planned_start_date": {
+          "$ref": "#/$defs/date"
+        },
+        "actual_start_date": {
+          "$ref": "#/$defs/date"
+        },
+        "end_date": {
+          "$ref": "#/$defs/date"
+        },
+        "status_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "administration_events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/administration_event"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "strength",
+        "route",
+        "dose",
+        "frequency",
+        "duration",
+        "dose_instruction",
+        "indication",
+        "lifecycle_status",
+        "planned_start_date",
+        "actual_start_date",
+        "end_date",
+        "status_reason",
+        "administration_events"
+      ],
+      "additionalProperties": false
+    },
+    "warning": {
+      "type": "object",
+      "properties": {
+        "sign": {
+          "type": "string",
+          "minLength": 1
+        },
+        "urgency": {
+          "type": "string",
+          "enum": [
+            "advice",
+            "important",
+            "urgent",
+            "emergency"
+          ]
+        },
+        "recommended_action": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "sign",
+        "urgency",
+        "recommended_action"
+      ],
+      "additionalProperties": false
+    },
+    "follow_up_item": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "appointment",
+            "laboratory_test",
+            "imaging",
+            "procedure",
+            "monitoring",
+            "referral",
+            "other"
+          ]
+        },
+        "specialty": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "interval": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "scheduled_date": {
+          "$ref": "#/$defs/date"
+        },
+        "purpose": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "planned",
+            "scheduled",
+            "completed",
+            "cancelled"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "specialty",
+        "interval",
+        "scheduled_date",
+        "purpose",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "glossary_term": {
+      "type": "object",
+      "properties": {
+        "term": {
+          "type": "string",
+          "minLength": 1
+        },
+        "definition_en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "definition_es": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "term",
+        "definition_en",
+        "definition_es"
+      ],
+      "additionalProperties": false
+    },
+    "patient_information": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^HC\\d{4}$"
+        },
+        "full_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "fictional_identification_number": {
+          "type": "string",
+          "pattern": "^SYN-ID-\\d{4}$"
+        },
+        "date_of_birth": {
+          "type": "string",
+          "pattern": "^\\d{2}/\\d{2}/\\d{4}$"
+        },
+        "age": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 125
+        },
+        "sex": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "encounter_date": {
+          "type": "string",
+          "pattern": "^\\d{2}/\\d{2}/\\d{4}$"
+        },
+        "phone_number": {
+          "type": "string",
+          "pattern": "^SYN-PHONE-\\d{4}$"
+        },
+        "email": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._%+\\-]+@example\\.invalid$"
+        },
+        "address": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "full_name",
+        "fictional_identification_number",
+        "date_of_birth",
+        "age",
+        "sex",
+        "encounter_date",
+        "phone_number",
+        "email",
+        "address"
+      ],
+      "additionalProperties": false
+    },
+    "reason_for_consultation": {
+      "type": "object",
+      "properties": {
+        "chief_complaint": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason_for_consultation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "encounter_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "outpatient",
+            "emergency",
+            "inpatient",
+            "follow_up",
+            "teleconsultation",
+            null
+          ]
+        }
+      },
+      "required": [
+        "chief_complaint",
+        "reason_for_consultation",
+        "encounter_type"
+      ],
+      "additionalProperties": false
+    },
+    "relevant_medical_history": {
+      "type": "object",
+      "properties": {
+        "past_medical_history": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "past_surgical_history": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "family_history": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "social_history": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allergies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/allergy"
+          }
+        }
+      },
+      "required": [
+        "past_medical_history",
+        "past_surgical_history",
+        "family_history",
+        "social_history",
+        "allergies"
+      ],
+      "additionalProperties": false
+    },
+    "current_symptoms": {
+      "type": "object",
+      "properties": {
+        "symptoms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/symptom"
+          }
+        },
+        "symptom_onset": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "symptom_duration": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "symptom_frequency": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "overall_severity": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "symptoms",
+        "symptom_onset",
+        "symptom_duration",
+        "symptom_frequency",
+        "overall_severity"
+      ],
+      "additionalProperties": false
+    },
+    "clinical_examination_and_investigations": {
+      "type": "object",
+      "properties": {
+        "vital_signs": {
+          "$ref": "#/$defs/vital_signs"
+        },
+        "physical_examination": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "laboratory_tests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/laboratory_test"
+          }
+        },
+        "imaging_studies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/imaging_study"
+          }
+        },
+        "other_investigations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/other_investigation"
+          }
+        }
+      },
+      "required": [
+        "vital_signs",
+        "physical_examination",
+        "laboratory_tests",
+        "imaging_studies",
+        "other_investigations"
+      ],
+      "additionalProperties": false
+    },
+    "clinical_assessment_and_diagnosis": {
+      "type": "object",
+      "properties": {
+        "primary_diagnosis": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/diagnosis"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "secondary_diagnoses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/diagnosis"
+          }
+        },
+        "clinical_assessment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "diagnostic_uncertainty": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "primary_diagnosis",
+        "secondary_diagnoses",
+        "clinical_assessment",
+        "diagnostic_uncertainty"
+      ],
+      "additionalProperties": false
+    },
+    "care_and_treatment": {
+      "type": "object",
+      "properties": {
+        "care_interventions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/care_intervention"
+          }
+        },
+        "therapeutic_procedures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/therapeutic_procedure"
+          }
+        },
+        "non_pharmacological_treatment": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "treatment_recommendations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "care_interventions",
+        "therapeutic_procedures",
+        "non_pharmacological_treatment",
+        "treatment_recommendations"
+      ],
+      "additionalProperties": false
+    },
+    "medication_management": {
+      "type": "object",
+      "properties": {
+        "medications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/medication"
+          }
+        }
+      },
+      "required": [
+        "medications"
+      ],
+      "additionalProperties": false
+    },
+    "clinical_progress": {
+      "type": "object",
+      "properties": {
+        "clinical_course": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "response_to_treatment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "current_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "complications": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "clinical_course",
+        "response_to_treatment",
+        "current_status",
+        "complications"
+      ],
+      "additionalProperties": false
+    },
+    "warnings_and_red_flags": {
+      "type": "object",
+      "properties": {
+        "warning_signs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/warning"
+          }
+        }
+      },
+      "required": [
+        "warning_signs"
+      ],
+      "additionalProperties": false
+    },
+    "follow_up_and_monitoring_plan": {
+      "type": "object",
+      "properties": {
+        "follow_up_items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/follow_up_item"
+          }
+        }
+      },
+      "required": [
+        "follow_up_items"
+      ],
+      "additionalProperties": false
+    },
+    "medical_glossary": {
+      "type": "object",
+      "properties": {
+        "glossary_terms": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/glossary_term"
+          },
+          "minItems": 2,
+          "maxItems": 4
+        }
+      },
+      "required": [
+        "glossary_terms"
+      ],
+      "additionalProperties": false
+    },
+    "plain_language_patient_version": {
+      "type": "object",
+      "properties": {
+        "summary_en": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "summary_es": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason_for_visit": {
+          "$ref": "#/$defs/bilingual"
+        },
+        "main_findings": {
+          "$ref": "#/$defs/bilingual"
+        },
+        "diagnosis_explanation": {
+          "$ref": "#/$defs/bilingual"
+        },
+        "treatment_explanation": {
+          "$ref": "#/$defs/bilingual"
+        },
+        "warning_explanation": {
+          "$ref": "#/$defs/bilingual"
+        },
+        "follow_up_explanation": {
+          "$ref": "#/$defs/bilingual"
+        }
+      },
+      "required": [
+        "summary_en",
+        "summary_es",
+        "reason_for_visit",
+        "main_findings",
+        "diagnosis_explanation",
+        "treatment_explanation",
+        "warning_explanation",
+        "follow_up_explanation"
+      ],
+      "additionalProperties": false
+    },
+    "patient_record": {
+      "type": "object",
+      "properties": {
+        "patient_information": {
+          "$ref": "#/$defs/patient_information"
+        },
+        "reason_for_consultation": {
+          "$ref": "#/$defs/reason_for_consultation"
+        },
+        "relevant_medical_history": {
+          "$ref": "#/$defs/relevant_medical_history"
+        },
+        "current_symptoms": {
+          "$ref": "#/$defs/current_symptoms"
+        },
+        "clinical_examination_and_investigations": {
+          "$ref": "#/$defs/clinical_examination_and_investigations"
+        },
+        "clinical_assessment_and_diagnosis": {
+          "$ref": "#/$defs/clinical_assessment_and_diagnosis"
+        },
+        "care_and_treatment": {
+          "$ref": "#/$defs/care_and_treatment"
+        },
+        "medication_management": {
+          "$ref": "#/$defs/medication_management"
+        },
+        "clinical_progress": {
+          "$ref": "#/$defs/clinical_progress"
+        },
+        "warnings_and_red_flags": {
+          "$ref": "#/$defs/warnings_and_red_flags"
+        },
+        "follow_up_and_monitoring_plan": {
+          "$ref": "#/$defs/follow_up_and_monitoring_plan"
+        },
+        "medical_glossary": {
+          "$ref": "#/$defs/medical_glossary"
+        },
+        "plain_language_patient_version": {
+          "$ref": "#/$defs/plain_language_patient_version"
+        }
+      },
+      "required": [
+        "patient_information",
+        "reason_for_consultation",
+        "relevant_medical_history",
+        "current_symptoms",
+        "clinical_examination_and_investigations",
+        "clinical_assessment_and_diagnosis",
+        "care_and_treatment",
+        "medication_management",
+        "clinical_progress",
+        "warnings_and_red_flags",
+        "follow_up_and_monitoring_plan",
+        "medical_glossary",
+        "plain_language_patient_version"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

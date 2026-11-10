@@ -1,0 +1,908 @@
+{
+ "summary": {
+  "pairs": 21,
+  "deterministic_agreement_with_design_labels": 19,
+  "mdeberta_forward_agreement_with_design_labels": 17,
+  "nli_deberta_base_en_agreement_with_design_labels": 12,
+  "nli_deberta_base_en_pairs": 14,
+  "note": "Agreement is with labels intended by construction, not with human reference labels (none recorded). No thresholds were derived from these pairs."
+ },
+ "pairs": [
+  {
+   "pair_id": "CAL-01",
+   "test_type": "supported_paraphrase",
+   "premise": "Ramipril 2.5 mg orally once daily in the morning, long-term.",
+   "premise_language": "en",
+   "hypothesis": "Take ramipril 2.5 mg by mouth once a day in the morning. It is a long-term blood pressure medicine.",
+   "hypothesis_language": "en",
+   "provenance": "constructed from HC0002 facts",
+   "design_expected_category": "supported",
+   "design_expected_forward_nli": "entailment",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "supported",
+   "deterministic_reasons": [
+    "no rule fired"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.01436,
+    "neutral": 0.985016,
+    "contradiction": 0.000624,
+    "predicted_label": "neutral",
+    "input_tokens": 49,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.994453,
+    "neutral": 0.005423,
+    "contradiction": 0.000124,
+    "predicted_label": "entailment",
+    "input_tokens": 49,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": false,
+   "nli_deberta_base_en_forward": {
+    "entailment": 0.002274,
+    "neutral": 0.997331,
+    "contradiction": 0.000395,
+    "predicted_label": "neutral",
+    "input_tokens": 49,
+    "truncated": false
+   },
+   "nli_deberta_base_en_matches_design_label": false,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-02",
+   "test_type": "supported_paraphrase",
+   "premise": "She denies fever, flank pain and vaginal discharge.",
+   "premise_language": "en",
+   "hypothesis": "You have no fever, no pain in your side and no vaginal discharge.",
+   "hypothesis_language": "en",
+   "provenance": "constructed from HC0007 facts",
+   "design_expected_category": "supported",
+   "design_expected_forward_nli": "entailment",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "supported",
+   "deterministic_reasons": [
+    "no rule fired"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.904448,
+    "neutral": 0.050758,
+    "contradiction": 0.044794,
+    "predicted_label": "entailment",
+    "input_tokens": 35,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.960019,
+    "neutral": 0.0381,
+    "contradiction": 0.001881,
+    "predicted_label": "entailment",
+    "input_tokens": 35,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": true,
+   "nli_deberta_base_en_forward": {
+    "entailment": 0.528123,
+    "neutral": 0.225196,
+    "contradiction": 0.246682,
+    "predicted_label": "entailment",
+    "input_tokens": 29,
+    "truncated": false
+   },
+   "nli_deberta_base_en_matches_design_label": true,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-03",
+   "test_type": "omission_of_important_information",
+   "premise": "Ibuprofen 400 mg orally every 8 hours with food for up to 7 days.",
+   "premise_language": "en",
+   "hypothesis": "Take ibuprofen 400 mg by mouth.",
+   "hypothesis_language": "en",
+   "provenance": "constructed from HC0006 facts (frequency, food and duration removed)",
+   "design_expected_category": "omission",
+   "design_expected_forward_nli": "entailment (forward); non-entailment expected in reverse",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "omission",
+   "deterministic_reasons": [
+    "premise numbers missing from hypothesis: [7.0, 8.0]"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.995369,
+    "neutral": 0.003929,
+    "contradiction": 0.000702,
+    "predicted_label": "entailment",
+    "input_tokens": 30,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.001732,
+    "neutral": 0.995519,
+    "contradiction": 0.002749,
+    "predicted_label": "neutral",
+    "input_tokens": 30,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": true,
+   "nli_deberta_base_en_forward": {
+    "entailment": 0.944378,
+    "neutral": 0.020287,
+    "contradiction": 0.035336,
+    "predicted_label": "entailment",
+    "input_tokens": 33,
+    "truncated": false
+   },
+   "nli_deberta_base_en_matches_design_label": true,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-04",
+   "test_type": "changed_medication_dose",
+   "premise": "Ibuprofen 400 mg orally every 8 hours with food for up to 7 days.",
+   "premise_language": "en",
+   "hypothesis": "Take ibuprofen 600 mg by mouth every 8 hours with food for up to 7 days.",
+   "hypothesis_language": "en",
+   "provenance": "constructed from HC0006 facts",
+   "design_expected_category": "contradiction",
+   "design_expected_forward_nli": "contradiction",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "contradiction",
+   "deterministic_reasons": [
+    "numbers not in premise: [600.0]; premise numbers missing: [400.0]"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.003998,
+    "neutral": 0.003612,
+    "contradiction": 0.99239,
+    "predicted_label": "contradiction",
+    "input_tokens": 40,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.009288,
+    "neutral": 0.003683,
+    "contradiction": 0.987029,
+    "predicted_label": "contradiction",
+    "input_tokens": 40,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": true,
+   "nli_deberta_base_en_forward": {
+    "entailment": 0.019249,
+    "neutral": 0.029308,
+    "contradiction": 0.951443,
+    "predicted_label": "contradiction",
+    "input_tokens": 43,
+    "truncated": false
+   },
+   "nli_deberta_base_en_matches_design_label": true,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-05",
+   "test_type": "changed_medication_frequency",
+   "premise": "Nitrofurantoin modified release 100 mg orally twice daily with food for 5 days.",
+   "premise_language": "en",
+   "hypothesis": "Take nitrofurantoin modified release 100 mg three times a day with food for 5 days.",
+   "hypothesis_language": "en",
+   "provenance": "constructed from HC0007 facts",
+   "design_expected_category": "contradiction",
+   "design_expected_forward_nli": "contradiction",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "supported",
+   "deterministic_reasons": [
+    "no rule fired"
+   ],
+   "deterministic_matches_design_label": false,
+   "mdeberta_forward": {
+    "entailment": 0.787473,
+    "neutral": 0.046856,
+    "contradiction": 0.165671,
+    "predicted_label": "entailment",
+    "input_tokens": 46,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.958028,
+    "neutral": 0.034037,
+    "contradiction": 0.007934,
+    "predicted_label": "entailment",
+    "input_tokens": 46,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": false,
+   "nli_deberta_base_en_forward": {
+    "entailment": 0.00817,
+    "neutral": 0.017255,
+    "contradiction": 0.974575,
+    "predicted_label": "contradiction",
+    "input_tokens": 42,
+    "truncated": false
+   },
+   "nli_deberta_base_en_matches_design_label": true,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-06",
+   "test_type": "negated_vs_positive_symptom",
+   "premise": "He denies difficulty swallowing, pain on swallowing and coughing up blood.",
+   "premise_language": "en",
+   "hypothesis": "He has been coughing up blood.",
+   "hypothesis_language": "en",
+   "provenance": "constructed from HC0009 facts",
+   "design_expected_category": "contradiction",
+   "design_expected_forward_nli": "contradiction",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "contradiction",
+   "deterministic_reasons": [
+    "negation cue in premise but not in hypothesis (polarity flip candidate)"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.791288,
+    "neutral": 0.204293,
+    "contradiction": 0.004419,
+    "predicted_label": "entailment",
+    "input_tokens": 35,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.437012,
+    "neutral": 0.416921,
+    "contradiction": 0.146067,
+    "predicted_label": "entailment",
+    "input_tokens": 35,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": false,
+   "nli_deberta_base_en_forward": {
+    "entailment": 0.896848,
+    "neutral": 0.101563,
+    "contradiction": 0.001589,
+    "predicted_label": "entailment",
+    "input_tokens": 24,
+    "truncated": false
+   },
+   "nli_deberta_base_en_matches_design_label": false,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-07",
+   "test_type": "negated_vs_positive_symptom",
+   "premise": "Niega fiebre, dolor en el flanco y flujo vaginal.",
+   "premise_language": "es",
+   "hypothesis": "La paciente tiene fiebre.",
+   "hypothesis_language": "es",
+   "provenance": "constructed from HC0007 facts (Spanish)",
+   "design_expected_category": "contradiction",
+   "design_expected_forward_nli": "contradiction",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "contradiction",
+   "deterministic_reasons": [
+    "negation cue in premise but not in hypothesis (polarity flip candidate)"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.974567,
+    "neutral": 0.012136,
+    "contradiction": 0.013296,
+    "predicted_label": "entailment",
+    "input_tokens": 27,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.000212,
+    "neutral": 0.009445,
+    "contradiction": 0.990342,
+    "predicted_label": "contradiction",
+    "input_tokens": 27,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": false,
+   "nli_deberta_base_en_forward": null,
+   "nli_deberta_base_en_matches_design_label": null,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-08",
+   "test_type": "suspected_vs_confirmed_diagnosis",
+   "premise": "Suspected gastroesophageal reflux disease; the diagnosis is clinical and remains provisional pending response to an empirical proton pump inhibitor trial.",
+   "premise_language": "en",
+   "hypothesis": "Gastroesophageal reflux disease has been confirmed.",
+   "hypothesis_language": "en",
+   "provenance": "constructed from HC0005 facts",
+   "design_expected_category": "contradiction",
+   "design_expected_forward_nli": "contradiction or neutral",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "contradiction",
+   "deterministic_reasons": [
+    "suspected in premise, stated as confirmed in hypothesis"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.000618,
+    "neutral": 0.004289,
+    "contradiction": 0.995093,
+    "predicted_label": "contradiction",
+    "input_tokens": 54,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.000478,
+    "neutral": 0.010168,
+    "contradiction": 0.989355,
+    "predicted_label": "contradiction",
+    "input_tokens": 54,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": true,
+   "nli_deberta_base_en_forward": {
+    "entailment": 0.001552,
+    "neutral": 0.003281,
+    "contradiction": 0.995167,
+    "predicted_label": "contradiction",
+    "input_tokens": 47,
+    "truncated": false
+   },
+   "nli_deberta_base_en_matches_design_label": true,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-09",
+   "test_type": "suspected_vs_confirmed_diagnosis",
+   "premise": "Probable antiphospholipid syndrome; requires repeat antibody testing at least 12 weeks later for confirmation.",
+   "premise_language": "en",
+   "hypothesis": "Tiene un síndrome antifosfolípido confirmado.",
+   "hypothesis_language": "es",
+   "provenance": "constructed from HC0010 facts (cross-language)",
+   "design_expected_category": "contradiction",
+   "design_expected_forward_nli": "contradiction or neutral",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "contradiction",
+   "deterministic_reasons": [
+    "suspected in premise, stated as confirmed in hypothesis"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.113824,
+    "neutral": 0.244688,
+    "contradiction": 0.641488,
+    "predicted_label": "contradiction",
+    "input_tokens": 43,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.00106,
+    "neutral": 0.99115,
+    "contradiction": 0.007789,
+    "predicted_label": "neutral",
+    "input_tokens": 43,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": true,
+   "nli_deberta_base_en_forward": null,
+   "nli_deberta_base_en_matches_design_label": null,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-10",
+   "test_type": "planned_vs_completed_procedure",
+   "premise": "Pelvic ultrasound was ordered on 29/10/2026 and has not been performed.",
+   "premise_language": "en",
+   "hypothesis": "The pelvic ultrasound was performed and was normal.",
+   "hypothesis_language": "en",
+   "provenance": "constructed from HC0008 facts",
+   "design_expected_category": "contradiction",
+   "design_expected_forward_nli": "contradiction",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "contradiction",
+   "deterministic_reasons": [
+    "planned/not performed in premise, completed in hypothesis"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.000401,
+    "neutral": 0.001724,
+    "contradiction": 0.997875,
+    "predicted_label": "contradiction",
+    "input_tokens": 33,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.000158,
+    "neutral": 0.004642,
+    "contradiction": 0.995201,
+    "predicted_label": "contradiction",
+    "input_tokens": 33,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": true,
+   "nli_deberta_base_en_forward": {
+    "entailment": 0.00047,
+    "neutral": 0.003595,
+    "contradiction": 0.995935,
+    "predicted_label": "contradiction",
+    "input_tokens": 32,
+    "truncated": false
+   },
+   "nli_deberta_base_en_matches_design_label": true,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-11",
+   "test_type": "planned_vs_completed_procedure",
+   "premise": "Multidisciplinary tumour board to decide between radiotherapy and transoral laser microsurgery; definitive cancer treatment has not yet started.",
+   "premise_language": "en",
+   "hypothesis": "He has already completed radiotherapy.",
+   "hypothesis_language": "en",
+   "provenance": "constructed from HC0009 facts",
+   "design_expected_category": "contradiction",
+   "design_expected_forward_nli": "contradiction",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "contradiction",
+   "deterministic_reasons": [
+    "planned/not performed in premise, completed in hypothesis"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.000356,
+    "neutral": 0.004537,
+    "contradiction": 0.995107,
+    "predicted_label": "contradiction",
+    "input_tokens": 41,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.000325,
+    "neutral": 0.007668,
+    "contradiction": 0.992007,
+    "predicted_label": "contradiction",
+    "input_tokens": 41,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": true,
+   "nli_deberta_base_en_forward": {
+    "entailment": 0.000621,
+    "neutral": 0.002013,
+    "contradiction": 0.997366,
+    "predicted_label": "contradiction",
+    "input_tokens": 38,
+    "truncated": false
+   },
+   "nli_deberta_base_en_matches_design_label": true,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-12",
+   "test_type": "invented_clinical_chronology",
+   "premise": "Symptoms began 2 days before the visit.",
+   "premise_language": "en",
+   "hypothesis": "Her symptoms began 2 weeks ago, after a long journey.",
+   "hypothesis_language": "en",
+   "provenance": "constructed from HC0007 facts",
+   "design_expected_category": "unsupported_addition",
+   "design_expected_forward_nli": "contradiction or neutral",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "supported",
+   "deterministic_reasons": [
+    "no rule fired"
+   ],
+   "deterministic_matches_design_label": false,
+   "mdeberta_forward": {
+    "entailment": 0.000671,
+    "neutral": 0.003284,
+    "contradiction": 0.996045,
+    "predicted_label": "contradiction",
+    "input_tokens": 31,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.001176,
+    "neutral": 0.007466,
+    "contradiction": 0.991358,
+    "predicted_label": "contradiction",
+    "input_tokens": 31,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": true,
+   "nli_deberta_base_en_forward": {
+    "entailment": 0.001253,
+    "neutral": 0.016572,
+    "contradiction": 0.982175,
+    "predicted_label": "contradiction",
+    "input_tokens": 25,
+    "truncated": false
+   },
+   "nli_deberta_base_en_matches_design_label": true,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-13",
+   "test_type": "invented_clinical_chronology",
+   "premise": "During the first 72 hours, through approximately 03/11/2026, he remained haemodynamically stable; a discharge date is not documented.",
+   "premise_language": "en",
+   "hypothesis": "He was discharged home on 03/11/2026.",
+   "hypothesis_language": "en",
+   "provenance": "constructed from HC0010 facts (QA-010)",
+   "design_expected_category": "unsupported_addition",
+   "design_expected_forward_nli": "neutral or contradiction",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "unsupported_addition",
+   "deterministic_reasons": [
+    "dated discharge asserted where premise says the date is not documented"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.055436,
+    "neutral": 0.707211,
+    "contradiction": 0.237353,
+    "predicted_label": "neutral",
+    "input_tokens": 50,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.000401,
+    "neutral": 0.004249,
+    "contradiction": 0.995351,
+    "predicted_label": "contradiction",
+    "input_tokens": 50,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": true,
+   "nli_deberta_base_en_forward": {
+    "entailment": 0.005806,
+    "neutral": 0.603032,
+    "contradiction": 0.391163,
+    "predicted_label": "neutral",
+    "input_tokens": 46,
+    "truncated": false
+   },
+   "nli_deberta_base_en_matches_design_label": true,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-14",
+   "test_type": "supported_cross_language_paraphrase",
+   "premise": "Omeprazole 20 mg orally once daily, 30 minutes before breakfast, for 8 weeks.",
+   "premise_language": "en",
+   "hypothesis": "Tome omeprazol 20 mg por vía oral una vez al día, 30 minutos antes del desayuno, durante 8 semanas.",
+   "hypothesis_language": "es",
+   "provenance": "constructed from HC0005 facts",
+   "design_expected_category": "supported",
+   "design_expected_forward_nli": "entailment",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "supported",
+   "deterministic_reasons": [
+    "no rule fired"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.998955,
+    "neutral": 0.000939,
+    "contradiction": 0.000106,
+    "predicted_label": "entailment",
+    "input_tokens": 56,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.998307,
+    "neutral": 0.001584,
+    "contradiction": 0.00011,
+    "predicted_label": "entailment",
+    "input_tokens": 56,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": true,
+   "nli_deberta_base_en_forward": null,
+   "nli_deberta_base_en_matches_design_label": null,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-15",
+   "test_type": "supported_cross_language_paraphrase",
+   "premise": "Hoarseness unchanged since the biopsy; definitive cancer treatment has not yet started.",
+   "premise_language": "en",
+   "hypothesis": "La ronquera no ha cambiado desde la biopsia. El tratamiento del cáncer todavía no ha empezado.",
+   "hypothesis_language": "es",
+   "provenance": "constructed from HC0009 facts",
+   "design_expected_category": "supported",
+   "design_expected_forward_nli": "entailment",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "supported",
+   "deterministic_reasons": [
+    "no rule fired"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.999031,
+    "neutral": 0.000843,
+    "contradiction": 0.000126,
+    "predicted_label": "entailment",
+    "input_tokens": 53,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.995572,
+    "neutral": 0.004322,
+    "contradiction": 0.000105,
+    "predicted_label": "entailment",
+    "input_tokens": 53,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": true,
+   "nli_deberta_base_en_forward": null,
+   "nli_deberta_base_en_matches_design_label": null,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-16",
+   "test_type": "unsupported_medication_addition",
+   "premise": "Oral antibiotic therapy started.",
+   "premise_language": "en",
+   "hypothesis": "Nitrofurantoin 100 mg twice daily for 7 days was started.",
+   "hypothesis_language": "en",
+   "provenance": "constructed (generic antibiotic source)",
+   "design_expected_category": "unsupported_addition",
+   "design_expected_forward_nli": "neutral",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "unsupported_addition",
+   "deterministic_reasons": [
+    "medication(s) not in premise: ['nitrofurantoin']"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.000496,
+    "neutral": 0.998443,
+    "contradiction": 0.001061,
+    "predicted_label": "neutral",
+    "input_tokens": 28,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.973459,
+    "neutral": 0.025575,
+    "contradiction": 0.000966,
+    "predicted_label": "entailment",
+    "input_tokens": 28,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": true,
+   "nli_deberta_base_en_forward": {
+    "entailment": 0.000338,
+    "neutral": 0.995353,
+    "contradiction": 0.00431,
+    "predicted_label": "neutral",
+    "input_tokens": 25,
+    "truncated": false
+   },
+   "nli_deberta_base_en_matches_design_label": true,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-17",
+   "test_type": "unsupported_medication_addition",
+   "premise": "The test is positive, and she is treated with antibiotics.",
+   "premise_language": "en",
+   "hypothesis": "The test is positive, and she is treated with antibiotics (nitrofurantoin 100 mg twice daily for 7 days).",
+   "hypothesis_language": "en",
+   "provenance": "Case10-2020-023_Expert_Adapted_PlainLanguage.txt (premise) vs Case10-002-2020-023_Expert_Adapted_PlainLanguage.txt (hypothesis)",
+   "design_expected_category": "unsupported_addition",
+   "design_expected_forward_nli": "neutral",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "unsupported_addition",
+   "deterministic_reasons": [
+    "medication(s) not in premise: ['nitrofurantoin']"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.000473,
+    "neutral": 0.999141,
+    "contradiction": 0.000386,
+    "predicted_label": "neutral",
+    "input_tokens": 45,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.997071,
+    "neutral": 0.002718,
+    "contradiction": 0.000211,
+    "predicted_label": "entailment",
+    "input_tokens": 45,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": true,
+   "nli_deberta_base_en_forward": {
+    "entailment": 0.000245,
+    "neutral": 0.998773,
+    "contradiction": 0.000981,
+    "predicted_label": "neutral",
+    "input_tokens": 41,
+    "truncated": false
+   },
+   "nli_deberta_base_en_matches_design_label": true,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-18",
+   "test_type": "unsupported_medication_addition",
+   "premise": "Por otro lado, conocemos que la paciente ha sufrido infecciones de tracto urinario de repetición por los que solicitamos uroanálisis y urocultivo por descartar nuevo cuadro de cólico renal que esté solapándose a la lumbalgia ya conocida de la paciente, resultando compatible con infección de orina para la cual también instauramos tratamiento antibiótico.",
+   "premise_language": "es",
+   "hypothesis": "The test is positive, and she is treated with antibiotics (nitrofurantoin 100 mg twice daily for 7 days).",
+   "hypothesis_language": "en",
+   "provenance": "CasoClinico2020-10-23.docx controlling source (premise) vs Case10-002-2020-023_Expert_Adapted_PlainLanguage.txt (hypothesis)",
+   "design_expected_category": "unsupported_addition",
+   "design_expected_forward_nli": "neutral",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "unsupported_addition",
+   "deterministic_reasons": [
+    "medication(s) not in premise: ['nitrofurantoin']"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.000323,
+    "neutral": 0.99922,
+    "contradiction": 0.000456,
+    "predicted_label": "neutral",
+    "input_tokens": 128,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.011594,
+    "neutral": 0.988237,
+    "contradiction": 0.00017,
+    "predicted_label": "neutral",
+    "input_tokens": 128,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": true,
+   "nli_deberta_base_en_forward": null,
+   "nli_deberta_base_en_matches_design_label": null,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-19",
+   "test_type": "missing_documented_progression",
+   "premise": "Tras la mala evolución de la paciente y deterioro tan rápido de su patología de base, comentamos el caso de esta paciente en sesión clínica en nuestro centro de salud donde enseñamos la primera radiografía anteroposterior y decidimos continuar estudio pues sospechamos cambios estructurales radicales que en servicio de urgencias pasaron por alto en dicha radiografía.",
+   "premise_language": "es",
+   "hypothesis": "Progress: No information is available.",
+   "hypothesis_language": "en",
+   "provenance": "CasoClinico2020-10-23.docx documented progression (premise) vs Case10-2020-023_Expert_Adapted_PlainLanguage.txt (hypothesis)",
+   "design_expected_category": "contradiction",
+   "design_expected_forward_nli": "contradiction or neutral",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "contradiction",
+   "deterministic_reasons": [
+    "hypothesis says no progress information while premise documents progress"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.000489,
+    "neutral": 0.001903,
+    "contradiction": 0.997608,
+    "predicted_label": "contradiction",
+    "input_tokens": 106,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.00049,
+    "neutral": 0.980807,
+    "contradiction": 0.018703,
+    "predicted_label": "neutral",
+    "input_tokens": 106,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": true,
+   "nli_deberta_base_en_forward": null,
+   "nli_deberta_base_en_matches_design_label": null,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-20",
+   "test_type": "missing_documented_progression",
+   "premise": "As her condition worsened quickly, the clinical team discussed her case and reviewed the first X-ray. They suspected that important structural changes might have been missed in the emergency department.",
+   "premise_language": "en",
+   "hypothesis": "Progress: No information is available.",
+   "hypothesis_language": "en",
+   "provenance": "Case10-002-2020-023_Expert_Adapted_PlainLanguage.txt progression text (premise) vs Case10-2020-023_Expert_Adapted_PlainLanguage.txt (hypothesis)",
+   "design_expected_category": "contradiction",
+   "design_expected_forward_nli": "contradiction or neutral",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "contradiction",
+   "deterministic_reasons": [
+    "hypothesis says no progress information while premise documents progress"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.000325,
+    "neutral": 0.003651,
+    "contradiction": 0.996024,
+    "predicted_label": "contradiction",
+    "input_tokens": 58,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.000859,
+    "neutral": 0.99582,
+    "contradiction": 0.003321,
+    "predicted_label": "neutral",
+    "input_tokens": 58,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": true,
+   "nli_deberta_base_en_forward": {
+    "entailment": 0.000232,
+    "neutral": 0.001081,
+    "contradiction": 0.998687,
+    "predicted_label": "contradiction",
+    "input_tokens": 46,
+    "truncated": false
+   },
+   "nli_deberta_base_en_matches_design_label": true,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  },
+  {
+   "pair_id": "CAL-21",
+   "test_type": "supported_cross_language_paraphrase",
+   "premise": "Tras la mala evolución de la paciente y deterioro tan rápido de su patología de base, comentamos el caso de esta paciente en sesión clínica en nuestro centro de salud donde enseñamos la primera radiografía anteroposterior y decidimos continuar estudio pues sospechamos cambios estructurales radicales que en servicio de urgencias pasaron por alto en dicha radiografía.",
+   "premise_language": "es",
+   "hypothesis": "As her condition worsened quickly, the clinical team discussed her case and reviewed the first X-ray. They suspected that important structural changes might have been missed in the emergency department.",
+   "hypothesis_language": "en",
+   "provenance": "CasoClinico2020-10-23.docx (premise) vs Case10-002-2020-023_Expert_Adapted_PlainLanguage.txt progression (hypothesis)",
+   "design_expected_category": "supported",
+   "design_expected_forward_nli": "entailment",
+   "design_label_author": "pipeline author (AI model) at construction time; not a human expert label",
+   "deterministic_prediction": "supported",
+   "deterministic_reasons": [
+    "no rule fired"
+   ],
+   "deterministic_matches_design_label": true,
+   "mdeberta_forward": {
+    "entailment": 0.995193,
+    "neutral": 0.004429,
+    "contradiction": 0.000378,
+    "predicted_label": "entailment",
+    "input_tokens": 147,
+    "truncated": false
+   },
+   "mdeberta_reverse": {
+    "entailment": 0.704554,
+    "neutral": 0.289539,
+    "contradiction": 0.005907,
+    "predicted_label": "entailment",
+    "input_tokens": 147,
+    "truncated": false
+   },
+   "mdeberta_forward_matches_design_label": true,
+   "nli_deberta_base_en_forward": null,
+   "nli_deberta_base_en_matches_design_label": null,
+   "human_reference_label": null,
+   "human_review_status": "pending_human_review"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+# Evaluation engine, in addition to requirements.txt.
+# Versions match the Prompt 4.1 evaluation run (narrative_eval/hf_model_config_v9.json) where it pinned them.
+textstat==0.7.13
+pyphen==0.18.1
+pandas>=2.0
+torch==2.15.0
+transformers==5.22.2
+sentence-transformers==6.2.0
+huggingface-hub==2.4.0
+bert-score==0.3.13
+nltk>=3.8
+# AlignScore (local repo in AlignScore/, checkpoint in AlignScore/checkpoints/)
+pytorch-lightning>=2.0
+spacy>=3.7
+scikit-learn
+pytest

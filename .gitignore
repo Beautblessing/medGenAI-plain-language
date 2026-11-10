@@ -1,0 +1,79 @@
+# Python, notebooks, editors and operating-system files
+__pycache__/
+*.py[cod]
+*.so
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.ipynb_checkpoints/
+.DS_Store
+.idea/
+.vscode/
+
+# Virtual environments and local configuration
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Hugging Face/model caches and weights. Obtain models as documented in readme.txt.
+.cache/
+huggingface/
+hf_cache/
+/models/
+AlignScore/checkpoints/
+*.ckpt
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Gradio/browser temporary files
+gradio_cached_examples/
+flagged/
+.gradio/
+tmp/
+temp/
+*.tmp
+*.temp
+*.log
+~$*
+
+# LOCAL GOVERNANCE STATE: never publish reviewer identity, audit logs, approvals,
+# corrections, upload history, freezes, exports or evaluation runs.
+runtime/*
+runtime_eval/
+runtime_narrative_review/
+# Exception approved by the project owner (10 Nov 2026): the approved v9 reference freeze is published
+# at the path the evaluation workspace loads by default. It carries reviewer initials only.
+!runtime/exports/
+runtime/exports/*
+!runtime/exports/freeze_20261106T152049729544Z_v0009_08567e1be79e_approved.zip
+
+# Local safety copies and historical working trees
+.backup_*/
+backup_*/
+backups/
+release/
+
+# Generated compatibility files.
+issues.json
+source_schema.json
+version_registry.json
+
+# Build and packaging output
+build/
+dist/
+*.egg-info/

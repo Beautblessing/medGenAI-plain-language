@@ -1,0 +1,103 @@
+{
+ "library_versions": {
+  "torch": "2.15.0",
+  "transformers": "5.22.2",
+  "sentence-transformers": "6.2.0",
+  "huggingface-hub": "2.4.0",
+  "tokenizers": "0.23.3",
+  "safetensors": "0.8.0",
+  "numpy": "2.5.3"
+ },
+ "device": "cpu",
+ "precision": "float32",
+ "determinism": "torch.manual_seed(0); torch.use_deterministic_algorithms(True); fixed thread count; eval mode; inference_mode; no sampling",
+ "models": {
+  "semantic": {
+   "repo_id": "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+   "revision": "4328cf26390c98c5e3c738b4460a05b95f4911f5",
+   "resolved_commit_sha": "4328cf26390c98c5e3c738b4460a05b95f4911f5",
+   "tokenizer_revision": "4328cf26390c98c5e3c738b4460a05b95f4911f5 (tokenizer files loaded from the same pinned snapshot)",
+   "files": [
+    "1_Pooling",
+    "README.md",
+    "config.json",
+    "config_sentence_transformers.json",
+    "model.safetensors",
+    "modules.json",
+    "sentence_bert_config.json",
+    "sentencepiece.bpe.model",
+    "special_tokens_map.json",
+    "tokenizer.json",
+    "tokenizer_config.json"
+   ],
+   "id2label": null,
+   "loading_error": null,
+   "max_seq_length": 128,
+   "pooling": "mean pooling (model's 1_Pooling config), L2-normalised embeddings",
+   "unit_embedding": "mean of L2-normalised sentence embeddings, re-normalised; sentences > 128 tokens are truncated by the model and counted",
+   "batch_size": 32,
+   "similarity": "cosine"
+  },
+  "nli_multilingual": {
+   "repo_id": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+   "revision": "8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c",
+   "resolved_commit_sha": "8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c",
+   "tokenizer_revision": "8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c (tokenizer files loaded from the same pinned snapshot)",
+   "files": [
+    "added_tokens.json",
+    "config.json",
+    "model.safetensors",
+    "special_tokens_map.json",
+    "spm.model",
+    "tokenizer.json",
+    "tokenizer_config.json"
+   ],
+   "id2label": {
+    "0": "entailment",
+    "1": "neutral",
+    "2": "contradiction"
+   },
+   "loading_error": null,
+   "max_sequence_length": 512,
+   "truncation": "only_first (premise) if pair exceeds 512 tokens; recorded per pair",
+   "batch_size": 16,
+   "padding": "dynamic per batch",
+   "decision_rule": "argmax over softmax probabilities; no tuned thresholds"
+  },
+  "nli_english_supplementary": {
+   "repo_id": "cross-encoder/nli-deberta-base",
+   "revision": "f375a3f8bdba5a9ea9489179fe2f7b7d69c00b76",
+   "resolved_commit_sha": "f375a3f8bdba5a9ea9489179fe2f7b7d69c00b76",
+   "tokenizer_revision": "f375a3f8bdba5a9ea9489179fe2f7b7d69c00b76 (tokenizer files loaded from the same pinned snapshot)",
+   "files": [
+    "config.json",
+    "merges.txt",
+    "model.safetensors",
+    "pytorch_model.bin",
+    "special_tokens_map.json",
+    "tokenizer.json",
+    "tokenizer_config.json",
+    "vocab.json"
+   ],
+   "id2label": {
+    "0": "contradiction",
+    "1": "entailment",
+    "2": "neutral"
+   },
+   "loading_error": null,
+   "max_sequence_length": 512,
+   "truncation": "only_first (premise) if pair exceeds 512 tokens; recorded per pair",
+   "batch_size": 16,
+   "padding": "dynamic per batch",
+   "decision_rule": "argmax over softmax probabilities; no tuned thresholds",
+   "scope": "English texts only; results kept separate from the multilingual model"
+  }
+ },
+ "thresholds": "None. No acceptance threshold was established; no reviewed examples exist to calibrate one. Scores are reported raw.",
+ "calibration_settings": "21 controlled pairs (evaluation_calibration_v9.json); used to describe detector behaviour only; no thresholds derived",
+ "runtime_timings_s": {
+  "calibration_s": 10.6,
+  "layer_b_s": 106.3,
+  "layer_d_s": 595.2
+ }
+}

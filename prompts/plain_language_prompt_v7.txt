@@ -1,0 +1,201 @@
+PLAIN-LANGUAGE ADAPTATION PROMPT (plain_v7_sectionwise_strict) — Qwen2.5-1.5B-Instruct, greedy decoding
+
+How it works: identifiers are removed from the professional narrative; the narrative is split into sections by its
+headings (follow-up sentences with urgent wording become warning signs); each section is sent to the model on its own
+with the messages below; the outputs are joined under the fixed headings. No example patient is included.
+
+====================================================================================================
+ENGLISH
+====================================================================================================
+[SYSTEM]
+You are a careful clinical writer. Use only facts stated in the source text. Never add diagnoses, medicines, doses, dates or instructions that are not in the source. Keep every medication name, dose, route, frequency and duration exactly as written. Keep diagnostic certainty (suspected stays suspected). Keep warning signs and follow-up plans.
+Always speak directly to the patient as 'you' (for example 'You came…', 'Take…'). Never write 'the patient', 'he', 'she', 'I' or 'my' for the patient.
+(+ case-specific safeguard for HC0005 and HC0010)
+
+[USER — section 'Why you came']
+Rewrite this part of a clinical note for the patient in plain English (6th-8th grade reading level). Write only the text for the section "Why you came" of a patient explanation: why you came and your relevant history. Use about <0.9 x words in the part> words. No heading, no Markdown symbols.
+STRICT RULES
+1. Use only facts in this PART. Add nothing: no diagnoses, medicines, doses, tests, dates, appointments or advice that are not in it.
+2. Speak to the patient as 'you'. Never write a name, 'the patient' or 'she/he'.
+3. Keep every medicine name, dose, how to take it (say 'by mouth' for oral), how often, for how long, any maximum daily dose and 'only when needed'. Keep every number, time interval and date exactly.
+4. Keep the urgency of each warning sign exactly: call emergency services, go for emergency care now, get seen the same day, or contact the clinic.
+5. Keep certainty and conditions: suspected stays suspected; 'if not improving' stays conditional; 'no date booked' stays not booked. Do not call a value high, low or normal unless the PART does.
+6. Explain medical terms in everyday words and write out abbreviations. Use short sentences.
+
+PART:
+"""
+<this section of the narrative>
+"""
+
+[USER — section 'What we found']
+Rewrite this part of a clinical note for the patient in plain English (6th-8th grade reading level). Write only the text for the section "What we found" of a patient explanation: what the examination and tests found. Use about <0.9 x words in the part> words. No heading, no Markdown symbols.
+STRICT RULES
+1. Use only facts in this PART. Add nothing: no diagnoses, medicines, doses, tests, dates, appointments or advice that are not in it.
+2. Speak to the patient as 'you'. Never write a name, 'the patient' or 'she/he'.
+3. Keep every medicine name, dose, how to take it (say 'by mouth' for oral), how often, for how long, any maximum daily dose and 'only when needed'. Keep every number, time interval and date exactly.
+4. Keep the urgency of each warning sign exactly: call emergency services, go for emergency care now, get seen the same day, or contact the clinic.
+5. Keep certainty and conditions: suspected stays suspected; 'if not improving' stays conditional; 'no date booked' stays not booked. Do not call a value high, low or normal unless the PART does.
+6. Explain medical terms in everyday words and write out abbreviations. Use short sentences.
+
+PART:
+"""
+<this section of the narrative>
+"""
+
+[USER — section 'What this means']
+Rewrite this part of a clinical note for the patient in plain English (6th-8th grade reading level). Write only the text for the section "What this means" of a patient explanation: what the diagnosis means. Use about <0.9 x words in the part> words. No heading, no Markdown symbols.
+STRICT RULES
+1. Use only facts in this PART. Add nothing: no diagnoses, medicines, doses, tests, dates, appointments or advice that are not in it.
+2. Speak to the patient as 'you'. Never write a name, 'the patient' or 'she/he'.
+3. Keep every medicine name, dose, how to take it (say 'by mouth' for oral), how often, for how long, any maximum daily dose and 'only when needed'. Keep every number, time interval and date exactly.
+4. Keep the urgency of each warning sign exactly: call emergency services, go for emergency care now, get seen the same day, or contact the clinic.
+5. Keep certainty and conditions: suspected stays suspected; 'if not improving' stays conditional; 'no date booked' stays not booked. Do not call a value high, low or normal unless the PART does.
+6. Explain medical terms in everyday words and write out abbreviations. Use short sentences.
+
+PART:
+"""
+<this section of the narrative>
+"""
+
+[USER — section 'Treatment']
+Rewrite this part of a clinical note for the patient in plain English (6th-8th grade reading level). Write only the text for the section "Treatment" of a patient explanation: first one line per medicine in the form '- name dose, by mouth, how often, for how long' (add 'only when needed' and the maximum per day if the PART gives them), then the advice in short sentences. Use about <0.9 x words in the part> words. No heading, no Markdown symbols.
+STRICT RULES
+1. Use only facts in this PART. Add nothing: no diagnoses, medicines, doses, tests, dates, appointments or advice that are not in it.
+2. Speak to the patient as 'you'. Never write a name, 'the patient' or 'she/he'.
+3. Keep every medicine name, dose, how to take it (say 'by mouth' for oral), how often, for how long, any maximum daily dose and 'only when needed'. Keep every number, time interval and date exactly.
+4. Keep the urgency of each warning sign exactly: call emergency services, go for emergency care now, get seen the same day, or contact the clinic.
+5. Keep certainty and conditions: suspected stays suspected; 'if not improving' stays conditional; 'no date booked' stays not booked. Do not call a value high, low or normal unless the PART does.
+6. Explain medical terms in everyday words and write out abbreviations. Use short sentences.
+
+PART:
+"""
+<this section of the narrative>
+"""
+
+[USER — section 'Warning signs']
+Rewrite this part of a clinical note for the patient in plain English (6th-8th grade reading level). Write only the text for the section "Warning signs" of a patient explanation: each warning sign and exactly what to do, one per line starting with '- '. Use about <0.9 x words in the part> words. No heading, no Markdown symbols.
+STRICT RULES
+1. Use only facts in this PART. Add nothing: no diagnoses, medicines, doses, tests, dates, appointments or advice that are not in it.
+2. Speak to the patient as 'you'. Never write a name, 'the patient' or 'she/he'.
+3. Keep every medicine name, dose, how to take it (say 'by mouth' for oral), how often, for how long, any maximum daily dose and 'only when needed'. Keep every number, time interval and date exactly.
+4. Keep the urgency of each warning sign exactly: call emergency services, go for emergency care now, get seen the same day, or contact the clinic.
+5. Keep certainty and conditions: suspected stays suspected; 'if not improving' stays conditional; 'no date booked' stays not booked. Do not call a value high, low or normal unless the PART does.
+6. Explain medical terms in everyday words and write out abbreviations. Use short sentences.
+
+PART:
+"""
+<this section of the narrative>
+"""
+
+[USER — section 'Follow-up']
+Rewrite this part of a clinical note for the patient in plain English (6th-8th grade reading level). Write only the text for the section "Follow-up" of a patient explanation: what happens next. Use about <0.9 x words in the part> words. No heading, no Markdown symbols.
+STRICT RULES
+1. Use only facts in this PART. Add nothing: no diagnoses, medicines, doses, tests, dates, appointments or advice that are not in it.
+2. Speak to the patient as 'you'. Never write a name, 'the patient' or 'she/he'.
+3. Keep every medicine name, dose, how to take it (say 'by mouth' for oral), how often, for how long, any maximum daily dose and 'only when needed'. Keep every number, time interval and date exactly.
+4. Keep the urgency of each warning sign exactly: call emergency services, go for emergency care now, get seen the same day, or contact the clinic.
+5. Keep certainty and conditions: suspected stays suspected; 'if not improving' stays conditional; 'no date booked' stays not booked. Do not call a value high, low or normal unless the PART does.
+6. Explain medical terms in everyday words and write out abbreviations. Use short sentences.
+
+PART:
+"""
+<this section of the narrative>
+"""
+
+====================================================================================================
+SPANISH
+====================================================================================================
+[SYSTEM]
+Eres un redactor clínico cuidadoso. Usa solo los datos del texto fuente. No añadas diagnósticos, medicamentos, dosis, fechas ni instrucciones que no aparezcan en él. Mantén exactamente el nombre, la dosis, la vía, la frecuencia y la duración de cada medicamento. Mantén la certeza diagnóstica (lo sospechado sigue siendo sospechado). Conserva los signos de alarma y el plan de seguimiento.
+Diríjase siempre directamente al paciente de usted (por ejemplo 'Usted vino…', 'Tome…'). No escriba nunca 'el paciente', 'la paciente', 'él', 'ella', 'yo' ni 'mi' para el paciente.
+(+ case-specific safeguard for HC0005 and HC0010)
+
+[USER — section 'Por qué vino']
+Reescriba esta parte de una nota clínica para el paciente en español sencillo. Escriba solo el texto del apartado "Por qué vino" de una explicación para el paciente: por qué vino y sus antecedentes relevantes. Use unas <0.9 x words in the part> palabras. Sin título y sin símbolos Markdown.
+REGLAS ESTRICTAS
+1. Use solo datos de esta PARTE. No añada nada: ni diagnósticos, medicamentos, dosis, pruebas, fechas, citas ni consejos que no estén en ella.
+2. Diríjase al paciente de usted. No escriba nunca un nombre, 'el paciente' ni 'la paciente'.
+3. Mantenga el nombre de cada medicamento, la dosis, cómo tomarlo ('por boca' si es oral), cada cuánto, durante cuánto tiempo, la dosis máxima diaria y 'solo si lo necesita'. Mantenga exactas todas las cifras, intervalos y fechas.
+4. Mantenga exactamente la urgencia de cada signo de alarma: llamar a emergencias, acudir a urgencias ahora, consultar el mismo día o contactar con la consulta.
+5. Mantenga la certeza y las condiciones: lo sospechado sigue sospechado; 'si no mejora' sigue siendo condicional; 'sin fecha' sigue sin fecha. No diga que un valor es alto, bajo o normal si la PARTE no lo dice.
+6. Explique los términos médicos con palabras cotidianas y escriba las abreviaturas completas. Use frases cortas.
+
+PARTE:
+"""
+<this section of the narrative>
+"""
+
+[USER — section 'Qué encontramos']
+Reescriba esta parte de una nota clínica para el paciente en español sencillo. Escriba solo el texto del apartado "Qué encontramos" de una explicación para el paciente: qué encontró la exploración y las pruebas. Use unas <0.9 x words in the part> palabras. Sin título y sin símbolos Markdown.
+REGLAS ESTRICTAS
+1. Use solo datos de esta PARTE. No añada nada: ni diagnósticos, medicamentos, dosis, pruebas, fechas, citas ni consejos que no estén en ella.
+2. Diríjase al paciente de usted. No escriba nunca un nombre, 'el paciente' ni 'la paciente'.
+3. Mantenga el nombre de cada medicamento, la dosis, cómo tomarlo ('por boca' si es oral), cada cuánto, durante cuánto tiempo, la dosis máxima diaria y 'solo si lo necesita'. Mantenga exactas todas las cifras, intervalos y fechas.
+4. Mantenga exactamente la urgencia de cada signo de alarma: llamar a emergencias, acudir a urgencias ahora, consultar el mismo día o contactar con la consulta.
+5. Mantenga la certeza y las condiciones: lo sospechado sigue sospechado; 'si no mejora' sigue siendo condicional; 'sin fecha' sigue sin fecha. No diga que un valor es alto, bajo o normal si la PARTE no lo dice.
+6. Explique los términos médicos con palabras cotidianas y escriba las abreviaturas completas. Use frases cortas.
+
+PARTE:
+"""
+<this section of the narrative>
+"""
+
+[USER — section 'Qué significa']
+Reescriba esta parte de una nota clínica para el paciente en español sencillo. Escriba solo el texto del apartado "Qué significa" de una explicación para el paciente: qué significa el diagnóstico. Use unas <0.9 x words in the part> palabras. Sin título y sin símbolos Markdown.
+REGLAS ESTRICTAS
+1. Use solo datos de esta PARTE. No añada nada: ni diagnósticos, medicamentos, dosis, pruebas, fechas, citas ni consejos que no estén en ella.
+2. Diríjase al paciente de usted. No escriba nunca un nombre, 'el paciente' ni 'la paciente'.
+3. Mantenga el nombre de cada medicamento, la dosis, cómo tomarlo ('por boca' si es oral), cada cuánto, durante cuánto tiempo, la dosis máxima diaria y 'solo si lo necesita'. Mantenga exactas todas las cifras, intervalos y fechas.
+4. Mantenga exactamente la urgencia de cada signo de alarma: llamar a emergencias, acudir a urgencias ahora, consultar el mismo día o contactar con la consulta.
+5. Mantenga la certeza y las condiciones: lo sospechado sigue sospechado; 'si no mejora' sigue siendo condicional; 'sin fecha' sigue sin fecha. No diga que un valor es alto, bajo o normal si la PARTE no lo dice.
+6. Explique los términos médicos con palabras cotidianas y escriba las abreviaturas completas. Use frases cortas.
+
+PARTE:
+"""
+<this section of the narrative>
+"""
+
+[USER — section 'Tratamiento']
+Reescriba esta parte de una nota clínica para el paciente en español sencillo. Escriba solo el texto del apartado "Tratamiento" de una explicación para el paciente: primero una línea por medicamento con la forma '- nombre dosis, por boca, cada cuánto, durante cuánto tiempo' (añada 'solo si lo necesita' y el máximo al día si la PARTE los indica), y después los consejos en frases cortas. Use unas <0.9 x words in the part> palabras. Sin título y sin símbolos Markdown.
+REGLAS ESTRICTAS
+1. Use solo datos de esta PARTE. No añada nada: ni diagnósticos, medicamentos, dosis, pruebas, fechas, citas ni consejos que no estén en ella.
+2. Diríjase al paciente de usted. No escriba nunca un nombre, 'el paciente' ni 'la paciente'.
+3. Mantenga el nombre de cada medicamento, la dosis, cómo tomarlo ('por boca' si es oral), cada cuánto, durante cuánto tiempo, la dosis máxima diaria y 'solo si lo necesita'. Mantenga exactas todas las cifras, intervalos y fechas.
+4. Mantenga exactamente la urgencia de cada signo de alarma: llamar a emergencias, acudir a urgencias ahora, consultar el mismo día o contactar con la consulta.
+5. Mantenga la certeza y las condiciones: lo sospechado sigue sospechado; 'si no mejora' sigue siendo condicional; 'sin fecha' sigue sin fecha. No diga que un valor es alto, bajo o normal si la PARTE no lo dice.
+6. Explique los términos médicos con palabras cotidianas y escriba las abreviaturas completas. Use frases cortas.
+
+PARTE:
+"""
+<this section of the narrative>
+"""
+
+[USER — section 'Signos de alarma']
+Reescriba esta parte de una nota clínica para el paciente en español sencillo. Escriba solo el texto del apartado "Signos de alarma" de una explicación para el paciente: cada signo de alarma y exactamente qué hacer, uno por línea empezando por '- '. Use unas <0.9 x words in the part> palabras. Sin título y sin símbolos Markdown.
+REGLAS ESTRICTAS
+1. Use solo datos de esta PARTE. No añada nada: ni diagnósticos, medicamentos, dosis, pruebas, fechas, citas ni consejos que no estén en ella.
+2. Diríjase al paciente de usted. No escriba nunca un nombre, 'el paciente' ni 'la paciente'.
+3. Mantenga el nombre de cada medicamento, la dosis, cómo tomarlo ('por boca' si es oral), cada cuánto, durante cuánto tiempo, la dosis máxima diaria y 'solo si lo necesita'. Mantenga exactas todas las cifras, intervalos y fechas.
+4. Mantenga exactamente la urgencia de cada signo de alarma: llamar a emergencias, acudir a urgencias ahora, consultar el mismo día o contactar con la consulta.
+5. Mantenga la certeza y las condiciones: lo sospechado sigue sospechado; 'si no mejora' sigue siendo condicional; 'sin fecha' sigue sin fecha. No diga que un valor es alto, bajo o normal si la PARTE no lo dice.
+6. Explique los términos médicos con palabras cotidianas y escriba las abreviaturas completas. Use frases cortas.
+
+PARTE:
+"""
+<this section of the narrative>
+"""
+
+[USER — section 'Seguimiento']
+Reescriba esta parte de una nota clínica para el paciente en español sencillo. Escriba solo el texto del apartado "Seguimiento" de una explicación para el paciente: qué pasará después. Use unas <0.9 x words in the part> palabras. Sin título y sin símbolos Markdown.
+REGLAS ESTRICTAS
+1. Use solo datos de esta PARTE. No añada nada: ni diagnósticos, medicamentos, dosis, pruebas, fechas, citas ni consejos que no estén en ella.
+2. Diríjase al paciente de usted. No escriba nunca un nombre, 'el paciente' ni 'la paciente'.
+3. Mantenga el nombre de cada medicamento, la dosis, cómo tomarlo ('por boca' si es oral), cada cuánto, durante cuánto tiempo, la dosis máxima diaria y 'solo si lo necesita'. Mantenga exactas todas las cifras, intervalos y fechas.
+4. Mantenga exactamente la urgencia de cada signo de alarma: llamar a emergencias, acudir a urgencias ahora, consultar el mismo día o contactar con la consulta.
+5. Mantenga la certeza y las condiciones: lo sospechado sigue sospechado; 'si no mejora' sigue siendo condicional; 'sin fecha' sigue sin fecha. No diga que un valor es alto, bajo o normal si la PARTE no lo dice.
+6. Explique los términos médicos con palabras cotidianas y escriba las abreviaturas completas. Use frases cortas.
+
+PARTE:
+"""
+<this section of the narrative>
+"""

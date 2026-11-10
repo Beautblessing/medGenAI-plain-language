@@ -1,0 +1,92 @@
+CLINICAL REFERENCE QA — CORRECTION AND REVALIDATION REPORT
+05 November 2026 | Schema V1.2.1 | Entirely fictional educational data
+===========================================================================
+Original dataset: clinical_records_reference.json (UNCHANGED)
+Revised dataset: clinical_records_reference_reviewed_v1.2.1.json
+Original SHA256: 53e9092dd93e72a8bbe5d0036c833aeaed41e4fa315fc6738530171a7faaa219
+Revised SHA256: 710fdb5e4373f5d16ccbf64ddc6b3207b16ebefc0cdaf5ac9b1820e1a9c7806a
+
+EXECUTED VALIDATION
+- jsonschema Draft202012Validator: 0 errors
+- Existing validate_schema_v1.2.1.py exit code: 0
+- TEST SUMMARY: 28/28 passed
+- Uploaded reference structural errors: 0
+- Additional deterministic issues: 0
+- 10 exact IDs, HC0001-HC0010, 13 sections each.
+
+REMEDIATION LOG
+
+QA-001 / HC0003 / Major
+Field: /HC0003/medication_management/medications/0/dose_instruction/time_of_day
+Action: Made phased titration explicit in structured time, meal relation, and additional instructions; no exact clock times inferred.
+Status: Resolved by documentation clarification
+
+QA-002 / HC0003 / Major
+Field: /HC0003/plain_language_patient_version/treatment_explanation
+Action: Added titration and atorvastatin dose in EN/ES treatment explanations and refreshed both summaries.
+Status: Resolved by documentation clarification
+
+QA-003 / HC0001 / Minor
+Field: /HC0001/plain_language_patient_version/warning_explanation/es
+Action: Restored emergency-level Spanish wording for breathing problems and drooling; separated urgent swelling.
+Status: Resolved by documentation clarification
+
+QA-004 / HC0004 / Minor
+Field: /HC0004/plain_language_patient_version/treatment_explanation/es
+Action: Added the documented written asthma action plan to Spanish treatment explanation and summary.
+Status: Resolved by documentation clarification
+
+QA-005 / HC0005 / Minor
+Field: /HC0005/medication_management/medications/1/lifecycle_status
+Action: Removed unsupported new-start dates and made intermittent use / discontinuation uncertainty explicit.
+Status: Clarified; reconciliation still requires source/clinical review
+
+QA-006 / HC0007 / Minor
+Field: /HC0007/relevant_medical_history/allergies/0
+Action: Moved documented skin rash from substance label to reaction while retaining reported status and unknown severity.
+Status: Resolved by documentation clarification
+
+QA-007 / HC0008 / Major
+Field: /HC0008/warnings_and_red_flags/warning_signs/3
+Action: Upgraded hourly pad-soaking to urgent same-day review, adding emergency contingencies consistently in EN/ES.
+Status: Provisional safety correction; clinician sign-off needed
+
+QA-008 / HC0008 / Minor
+Field: /HC0008/medication_management/medications/0/dose_instruction/meal_relation
+Action: Encoded documented empty-stomach instruction in structured field.
+Status: Resolved by documentation clarification
+
+QA-009 / HC0009 / Minor
+Field: /HC0009/medication_management/medications/0/actual_start_date
+Action: Set unknown amlodipine initiation dates to null; retained active ongoing status.
+Status: Resolved by documentation clarification
+
+QA-010 / HC0010 / Major
+Field: /HC0010/clinical_progress/clinical_course
+Action: Marked clinical progress as retrospective relative to admission, with approximate 72-hour endpoint, and explicitly marked progress-note/discharge date unknown.
+Status: Clarified; exact source documentation date remains unavailable
+
+QA-011 / HC0010 / Major
+Field: /HC0010/medication_management/medications/6/administration_events/0/dose_administered
+Action: Replaced free-text dose placeholder with schema-permitted null and documented missing dose; preserved given status/event.
+Status: Unresolved missing source datum; clinician/source verification required
+
+QA-012 / HC0010 / Minor
+Field: /HC0010/plain_language_patient_version/treatment_explanation/es
+Action: Added continuing antiplatelet, statin, and beta-blocker classes to Spanish; aligned summaries and reflected unknown heparin dose in both languages.
+Status: Resolved by documentation clarification
+
+QUALITY GATE: PASS WITH WARNINGS — provisional reviewed dataset only.
+Unresolved: HC0010 heparin dose is unrecorded; do not invent an amount or claim dose verification.
+Requires clinician approval: HC0008 heavy menstrual bleeding safety triage language.
+Other documentation review: HC0005 ibuprofen actual discontinuation, HC0010 exact progress note date.
+Source information must be obtained to fully close those uncertainties.
+
+LIMITATIONS
+Structural validation cannot establish clinical safety or semantic equivalence.
+No physician or professional translator sign-off has occurred.
+The bilingual strings were aligned editorially; no semantic similarity/readability metrics were executed.
+No original dataset fields were edited. No CSVs were generated.
+
+REPRODUCE:
+python validate_schema_v1.2.1.py clinical_records_reference_reviewed_v1.2.1.json

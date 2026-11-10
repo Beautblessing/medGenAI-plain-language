@@ -1,0 +1,44 @@
+MASTER PROMPT 5.2 — SUBMISSION SCOPE: PROFESSIONAL NARRATIVE vs PLAIN-LANGUAGE OUTPUT vs REFERENCE PATIENT EXPLANATION
+Prompt version: 5.2.1 (derived from Master Prompt 5.1.0; 5.2.0 removed anonymization, 5.2.1 also removes summarization)
+Application: medGenAI_4_1
+Submission priority: functional, reproducible research prototype for 10 November 2026
+
+WHAT CHANGES FROM 5.1
+Everything in 5.1 (and, through it, 5.0) still applies except the scope changes below.
+
+1. SCOPE OF THE SUBMITTED EVALUATION
+  In scope: one focused, three-way comparison per patient (HC0001–HC0010) and language (EN/ES):
+    (a) the professional clinical narrative (source, from the approved v9 freeze),
+    (b) the generated plain-language output (local model Qwen2.5-1.5B-Instruct and the rule baseline),
+    (c) the reference patient explanation (from the approved v9 freeze), scored as the plain-language baseline.
+  Compared on: length and sentence length, readability (primary score, Flesch-Kincaid grade for English),
+  required structured facts supported, critical problems, contradictions / unsupported additions (NLI),
+  semantic closeness to the professional narrative (embedding cosine), and similarity of the output to the
+  reference explanation (BERTScore F1 / embedding cosine). Also English vs Spanish and method vs method.
+  Out of scope: anonymization and summarization.
+
+2. WHY THESE TWO TASKS ARE OUT OF SCOPE
+  Anonymization: the ten cases are synthetic and contain only known fictional identifiers (SYN-ID, SYN-PHONE,
+  example.invalid addresses). Replacing them is deterministic and its outcome is known in advance, so it is a
+  preprocessing step, not an NLP result. Its NLI checks also report false contradictions on unchanged sentences.
+  Summarization: the approved freeze has no reference summaries, so a summary can only be checked against the
+  source, not against an approved target. The reference patient explanations are an approved target for the
+  plain-language task, which makes that comparison the stronger and more defensible result. One task also keeps
+  the results, the review effort and the write-up focused.
+
+3. WHAT THIS MEANS IN THE APPLICATION
+  - The Anonymization and Summarization tabs are hidden. Batch generation and CSV batch offer only
+    plain-language adaptation; a CSV row with a hidden task is rejected with a clear error.
+  - Plain-Language Adaptation and Evaluation and Metrics show a three-way table first: Measure | Professional
+    narrative (source) | Generated plain-language output | Reference patient explanation. The reference column is
+    computed deterministically on the fly and is not stored as a run.
+  - Hidden-task runs, review items and output files are excluded from the Evaluation and Metrics run list, the
+    Evaluation Review Queue and the export bundle; the export manifest records scope_note and
+    excluded_tasks = ["anonymization", "summarization"].
+  - The code and tests for both tasks are retained. Either can be shown again for inspection with
+    CLINICAL_EVAL_ENABLE_ANONYMIZATION=1 and/or CLINICAL_EVAL_ENABLE_SUMMARIZATION=1 (exports then include it).
+  - No data are deleted: earlier runs stay in runtime_eval/ and are simply not shown or exported.
+
+4. ACCEPTANCE (adjusted)
+  The 5.0/5.1 transformation gate applies to plain-language adaptation only. All other gates, Workspace A
+  preservation (data, approvals and hashes unchanged) and isolation tests remain as in 5.1.
